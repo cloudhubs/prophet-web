@@ -28,7 +28,7 @@ func GitServer(w http.ResponseWriter, r *http.Request) {
 			log(w, "Sending request")
 
 		} else {
-			//fuck off
+			//request exhausted
 			log(w, "Resources exhausted, next available will be tomorrow")
 		}
 	} else {
