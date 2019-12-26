@@ -15,7 +15,7 @@ var reqDate = time.Now()
 var currentTime = time.Now()
 var format = "2006.01.02 15:04:05"
 var p = fmt.Fprintf
-var prophetUrl = ""
+var prophetUrl = "/"
 
 //ToDo: param
 func GitServer(w http.ResponseWriter, r *http.Request) {
@@ -26,7 +26,6 @@ func GitServer(w http.ResponseWriter, r *http.Request) {
 		if curr < MaxRequests {
 			// send request
 			log(w, "Sending request")
-
 		} else {
 			//request exhausted
 			log(w, "Resources exhausted, next available will be tomorrow")
@@ -54,6 +53,7 @@ func postProphet(url string){
 	if err != nil {
 		panic(err)
 	}
+
 }
 
 func newRequest(url string) []byte {
