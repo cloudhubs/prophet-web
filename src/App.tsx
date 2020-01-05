@@ -54,6 +54,7 @@ class App extends React.Component<Props, State> {
                 }),
                 body: JSON.stringify(this.state.prophetRequest)
             });
+
             return response.ok;
         } catch (ex) {
             return false;
