@@ -17,7 +17,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 import FolderIcon from '@material-ui/icons/Folder';
 import { ListSubheader } from '@material-ui/core';
-import Graph from 'vis';
+import Graph from "react-graph-vis";
 
 const drawerWidth = 240;
 
@@ -81,7 +81,7 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
             <List>
                 {['Context Map', 'Communication'].map((text, index) => (
                     <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                        <ListItemIcon>{ <FolderIcon /> }</ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
                 ))}
@@ -102,29 +102,35 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
     );
 
 
-    let graph = {
+    const graph = {
         nodes: [
-            { id: 1, label: 'Node 1' },
-            { id: 2, label: 'Node 2' },
-            { id: 3, label: 'Node 3' },
-            { id: 4, label: 'Node 4' },
-            { id: 5, label: 'Node 5' }
+            { id: 1, label: "Node 1", title: "node 1 tootip text", shape: "box" },
+            { id: 2, label: "Node 2", title: "node 2 tootip text" },
+            { id: 3, label: "Node 3", title: "node 3 tootip text" },
+            { id: 4, label: "Node 4", title: "node 4 tootip text" },
+            { id: 5, label: "Node 5", title: "node 5 tootip text" }
         ],
-        edges: [{ from: 1, to: 2 }, { from: 1, to: 3 }, { from: 2, to: 4 }, { from: 2, to: 5 }]
+        edges: [
+            { from: 1, to: 2 },
+            { from: 1, to: 3 },
+            { from: 2, to: 4 },
+            { from: 2, to: 5 }
+        ]
     };
 
-    let options = {
+    const options = {
         layout: {
             hierarchical: true
         },
         edges: {
-            color: '#000000'
-        }
+            color: "#000000"
+        },
+        height: "500px"
     };
 
-    let events = {
-        select: (event: { nodes: any; edges: any; }) => {
-            let { nodes, edges } = event;
+    const events = {
+        select: (event: any) => {
+            var { nodes, edges } = event;
         }
     };
 
@@ -148,16 +154,7 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
                 </Toolbar>
             </AppBar>
 
-            <Graph
-                graph={graph}
-                options={options}
-                events={events}
-                style={style}
-                getNetwork={this.getNetwork}
-                getEdges={this.getEdges}
-                getNodes={this.getNodes}
-                vis={vis => (this.vis = vis)}
-            />
+
 
             <nav className={classes.drawer} aria-label="mailbox folders">
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -207,6 +204,21 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
                 <Typography paragraph>
 
                 </Typography>
+
+                Graph:
+                <Graph
+                    graph={graph}
+                    options={options}
+                    events={events}
+                    getNetwork={()=> {
+                        //  if you want access to vis.js network api you can set the state in a parent component using this property
+                    }}
+                />
+
+                Mermaid:
+
+
+
             </main>
         </div>
     );
