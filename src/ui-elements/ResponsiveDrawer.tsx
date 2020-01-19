@@ -15,9 +15,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 import FolderIcon from '@material-ui/icons/Folder';
 import { ListSubheader } from '@material-ui/core';
-import {ConfigurationForm} from "./components/ConfigurationForm";
-import {UMLClassDiagram} from "./components/UMLClassDiagram";
-import {CommunicationDiagram} from "./components/CommunicationDiagram";
+import {ConfigurationForm} from "../components/ConfigurationForm";
+import {UMLClassDiagram} from "../components/UMLClassDiagram";
+import {CommunicationDiagram} from "../components/CommunicationDiagram";
 
 
 const drawerWidth = 240;
