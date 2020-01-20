@@ -1,6 +1,5 @@
 import React from "react";
 import mermaid from "mermaid";
-import {useGlobalState} from '../state';
 
 mermaid.initialize({
     startOnLoad: true
@@ -9,8 +8,7 @@ mermaid.initialize({
 type Props = {
     chart: any;
 }
-
-class InnerMermaid extends React.Component<Props> {
+export class Mermaid extends React.Component<Props> {
     componentDidMount() {
         mermaid.contentLoaded();
     }
@@ -18,18 +16,3 @@ class InnerMermaid extends React.Component<Props> {
         return <div className="mermaid">{this.props.chart}</div>;
     }
 }
-
-const Mermaid = () => {
-    const [value, update] = useGlobalState('communicationGraph');
-    return (
-        <div>
-            Hello from mermaid
-            <InnerMermaid
-            chart={
-                value}
-            />
-        </div>
-    );
-}
-
-export default Mermaid;
