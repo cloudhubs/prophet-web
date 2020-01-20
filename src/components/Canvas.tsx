@@ -4,14 +4,32 @@ import {useGlobalState} from '../state';
 
 const Canvas = () => {
     const [prophetAppData, update] = useGlobalState('prophetAppData');
+    const [selectedMs] = useGlobalState('ms');
+    const [contextMap] = useGlobalState('contextMap');
+    const [communication] = useGlobalState('communication');
     return (
         <div>
-            {}
-            Hello from mermaid
+            {contextMap &&
             <Mermaid
                 chart={
-                    value}
-            />
+                    prophetAppData.global.contextMap} />
+            }
+
+            {communication &&
+
+            <Mermaid
+                chart={
+                    prophetAppData.global.communication} />
+            }
+
+            {prophetAppData.ms.map((ms, index) => {
+                if (ms.name == selectedMs) {
+                    return <Mermaid
+                        chart={
+                            ms.boundedContext} />
+                    }
+                })
+            }
         </div>
     );
 }

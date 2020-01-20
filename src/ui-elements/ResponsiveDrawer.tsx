@@ -18,6 +18,8 @@ import { ListSubheader } from '@material-ui/core';
 import {ConfigurationForm} from "../components/ConfigurationForm";
 import Communication from "../components/Communication";
 import ContextMap from "../components/ContextMap";
+import Canvas from "../components/Canvas";
+import {useGlobalState} from "../state";
 
 const drawerWidth = 240;
 
@@ -69,6 +71,33 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
+    const activateMs = (ms: string) => {
+        console.log(ms);
+        updateContextMap(false);
+        updateCommunication(false);
+        updateMs(ms);
+    }
+
+    const activateGlobal = (global: string) => {
+        console.log(global);
+        if (global == "Context Map"){
+            updateContextMap(true);
+            updateCommunication(false);
+            updateMs("");
+        }
+
+        if (global == "Communication") {
+            updateContextMap(false);
+            updateCommunication(true);
+            updateMs("");
+        }
+    }
+
+    const [prophetAppData, update] = useGlobalState('prophetAppData');
+    const [selectedMs, updateMs] = useGlobalState('ms');
+    const [contextMap, updateContextMap] = useGlobalState('contextMap');
+    const [communication, updateCommunication] = useGlobalState('communication');
+
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -80,7 +109,7 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
             <Divider />
             <List>
                 {['Context Map', 'Communication'].map((text, index) => (
-                    <ListItem button key={text}>
+                    <ListItem button key={text} onClick={(e) => activateGlobal(text)}>
                         <ListItemIcon>{ <FolderIcon /> }</ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
@@ -89,9 +118,9 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
             <ListSubheader>Microservices</ListSubheader>
             <Divider />
             <List>
-                {['CMS', 'EMS', 'QMS'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{ <FolderIcon /> }</ListItemIcon>
+                {['EMS', 'CMS'].map((text, index) => (
+                    <ListItem button key={text} onClick={(e) => activateMs(text)}>
+                        <ListItemIcon >{ <FolderIcon /> }</ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
                 ))}
@@ -155,9 +184,7 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
             </nav>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
-                <ConfigurationForm/>
-                <Communication/>
-                <ContextMap/>
+                <Canvas/>
             </main>
         </div>
     );

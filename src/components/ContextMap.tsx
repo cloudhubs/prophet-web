@@ -7,6 +7,7 @@ const ContextMap = () => {
     return (
         <div>
             Hello from mermaid
+
             <Mermaid
                 chart={
                     value}

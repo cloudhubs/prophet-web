@@ -29,16 +29,7 @@ class App extends React.Component<Props, State> {
                 url: ''
             }
         };
-
-
-
     }
-
-
-
-
-
-
 
     render() {
         return (

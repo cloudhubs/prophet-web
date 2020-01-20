@@ -6,28 +6,28 @@ const data: ProphetAppData = {
     global: {
         projectName: "TMS",
         communication: `graph LR;
-        A-->B;
-        B-->C;
-        B-->D[tms];`,
-        contextMap: `graph LR;
-        A-->B;
-        B-->C;
-        B-->D[context];`,
+        EMS-->CMS;
+        QMS-->CMS;`,
+        contextMap: `graph TD;
+        User-->Exam;
+        Exam-->Question;
+        Exam-->Answer;`,
     },
     ms: [
         {
             name: "EMS",
             boundedContext: `graph LR;
-        A-->B;
-        B-->C;
-        B-->D[ems];`,
+        User-->Exam;
+        Exam-->Choice;
+        Choice-->Answer;`,
         },
         {
             name: "CMS",
             boundedContext: `graph LR;
-        A-->B;
-        B-->C;
-        B-->D[cms];`,
+        Question-->Language;
+        Question-->Code;
+        Question-->Choice;
+        Exam-->Question;`,
         },
     ],
     isMonolith: false
@@ -41,5 +41,8 @@ export const { GlobalStateProvider, useGlobalState } = createGlobalState({
         B-->D[name];
       `,
     prophetAppData: data,
-    configuration: new Configuration('', '', false, false)
+    configuration: new Configuration('', '', false, false),
+    ms: "",
+    contextMap: true,
+    communication: false
 });
