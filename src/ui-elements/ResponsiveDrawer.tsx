@@ -18,7 +18,9 @@ import { ListSubheader } from '@material-ui/core';
 import {ConfigurationForm} from "../components/ConfigurationForm";
 import {UMLClassDiagram} from "../components/UMLClassDiagram";
 import {CommunicationDiagram} from "../components/CommunicationDiagram";
-
+import Mermaid from "../components/Mermaid";
+import Vis from "../components/Vis";
+import {useGlobalState} from "../state";
 
 const drawerWidth = 240;
 
@@ -73,6 +75,10 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+
+    const graph = useGlobalState('graph');
+    const options = useGlobalState('options');
+    const events = useGlobalState('events');
 
     const drawer = (
         <div>
@@ -157,8 +163,10 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
             <main className={classes.content}>
                 <div className={classes.toolbar} />
                 <ConfigurationForm/>
-                <UMLClassDiagram/>
+                <UMLClassDiagram graph={graph} options={options} events={events}/>
                 <CommunicationDiagram/>
+                <Mermaid/>
+                <Vis/>
             </main>
         </div>
     );

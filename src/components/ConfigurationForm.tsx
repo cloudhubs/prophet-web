@@ -14,6 +14,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
+import {ProphetAppRequest} from "../data/ProphetAppRequest";
 
 interface Props {}
 
@@ -24,19 +25,15 @@ interface State {
     persistDb: boolean;
     isMonolith: boolean;
     prophetAppUrl: string;
-    prophetRequest: ProphetRequest;
+    prophetRequest: ProphetAppRequest;
     // all: boolean;
     // communication: boolean;
     // contextmap: boolean;
 };
 
-interface ProphetRequest {
-    url: string
-}
 
 
-
-export class ConfigurationForm extends React.Component<Props, State> {
+export class ConfigurationForm extends React.Component<{}, {}> {
     state: State;
     classes: any;
     constructor(props: Props) {
@@ -100,6 +97,7 @@ export class ConfigurationForm extends React.Component<Props, State> {
                     <Grid container wrap="nowrap" spacing={2}>
                         <Grid item>
                             <Avatar>W</Avatar>
+                            <Avatar>W</Avatar>
                         </Grid>
                         <Grid item xs zeroMinWidth>
                             <Typography noWrap>message</Typography>
@@ -109,6 +107,7 @@ export class ConfigurationForm extends React.Component<Props, State> {
 
                 <Box component="span" m={1}>
                     <FormControl>
+                        github.com/
                         <InputLabel htmlFor="my-input">Email address</InputLabel>
                         <Input id="my-input" aria-describedby="my-helper-text" />
                         <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>

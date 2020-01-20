@@ -1,7 +1,12 @@
 import React from "react";
 import Graph from "react-graph-vis";
+import {useGlobalState} from "../state";
 
-interface Props {}
+interface Props {
+    graph: any;
+    options: any;
+    events: any;
+}
 
 interface State {
     graph: any;
@@ -72,3 +77,5 @@ export class UMLClassDiagram extends React.Component<Props, State> {
     }
 
 }
+
+
