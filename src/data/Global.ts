@@ -1,5 +1,5 @@
-export interface Global {
-    "projectName": string;
-    "communication": string;
-    "contextMap": string;
+export class Global {
+    projectName: string;
+    communication: string;
+    contextMap: string;
 }
