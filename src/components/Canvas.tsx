@@ -11,6 +11,16 @@ const Canvas = () => {
     return (
         <div>
             <ConfigurationForm/>
+
+            {/*<Mermaid*/}
+            {/*    chart={*/}
+            {/*        prophetAppData.global.contextMap} />*/}
+
+            {/*<Mermaid*/}
+            {/*    chart={*/}
+            {/*        prophetAppData.global.communication} />*/}
+
+
             {contextMap &&
             <Mermaid
                 chart={

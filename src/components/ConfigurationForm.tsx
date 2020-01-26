@@ -10,6 +10,7 @@ const ConfigurationForm = () => {
     const [vData, uData] = useGlobalState('prophetAppData');
     const [vRepo, uRepo] = useGlobalState('repository');
     const [vBackend] = useGlobalState('backendUrl');
+    const [vContextMap, uContextMap] = useGlobalState('contextMap');
 
     const classes = makeStyles((theme: Theme) =>
         createStyles({
@@ -32,12 +33,15 @@ const ConfigurationForm = () => {
 
     const onSubmit = async () => {
         let prophetWebRequest: ProphetWebRequest = new ProphetWebRequest(vRepo);
+        //
         const response = await axios.post(
             "http://127.0.0.1:8080",
-            { url: 'tms/cloudhubs' },
+            prophetWebRequest,
             { headers: { 'Content-Type': 'application/json' } }
         )
         console.log(response.data);
+        uData(response.data);
+        uContextMap(true)
 
         // fetch("localhost:8080", {
         //     method: "post",
