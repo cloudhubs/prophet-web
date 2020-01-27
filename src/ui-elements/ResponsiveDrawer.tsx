@@ -15,9 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 import FolderIcon from '@material-ui/icons/Folder';
 import { ListSubheader } from '@material-ui/core';
-import {ConfigurationForm} from "../components/ConfigurationForm";
 import Communication from "../components/Communication";
-import ContextMap from "../components/ContextMap";
 import Canvas from "../components/Canvas";
 import {useGlobalState} from "../state";
 
@@ -58,10 +56,6 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface ResponsiveDrawerProps {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
     container?: Element;
 }
 
@@ -70,6 +64,10 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [prophetAppData, update] = useGlobalState('prophetAppData');
+    const [selectedMs, updateMs] = useGlobalState('ms');
+    const [contextMap, updateContextMap] = useGlobalState('contextMap');
+    const [communication, updateCommunication] = useGlobalState('communication');
 
     const activateMs = (ms: string) => {
         console.log(ms);
@@ -93,10 +91,7 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
         }
     }
 
-    const [prophetAppData, update] = useGlobalState('prophetAppData');
-    const [selectedMs, updateMs] = useGlobalState('ms');
-    const [contextMap, updateContextMap] = useGlobalState('contextMap');
-    const [communication, updateCommunication] = useGlobalState('communication');
+
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -129,8 +124,6 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
 
         </div>
     );
-
-
 
     return (
         <div className={classes.root}>
@@ -165,8 +158,7 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
                         }}
                         ModalProps={{
                             keepMounted: true, // Better open performance on mobile.
-                        }}
-                    >
+                        }}>
                         {drawer}
                     </Drawer>
                 </Hidden>
@@ -176,8 +168,7 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
                             paper: classes.drawerPaper,
                         }}
                         variant="permanent"
-                        open
-                    >
+                        open>
                         {drawer}
                     </Drawer>
                 </Hidden>

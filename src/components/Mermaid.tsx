@@ -11,6 +11,7 @@ type Props = {
 export class Mermaid extends React.Component<Props> {
     componentDidMount() {
         mermaid.contentLoaded();
+        this.forceUpdate()
     }
     render() {
         return <div className="mermaid">{this.props.chart}</div>;

@@ -1,4 +1,4 @@
-export interface Ms {
-    "name": string;
-    "boundedContext": string;
+export class Ms {
+    name: string;
+    boundedContext: string;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import {Mermaid} from "./Mermaid"
 import {useGlobalState} from '../state';
+import ConfigurationForm from "./ConfigurationForm";
 
 const Canvas = () => {
     const [prophetAppData, update] = useGlobalState('prophetAppData');
@@ -9,6 +10,17 @@ const Canvas = () => {
     const [communication] = useGlobalState('communication');
     return (
         <div>
+            <ConfigurationForm/>
+
+            {/*<Mermaid*/}
+            {/*    chart={*/}
+            {/*        prophetAppData.global.contextMap} />*/}
+
+            {/*<Mermaid*/}
+            {/*    chart={*/}
+            {/*        prophetAppData.global.communication} />*/}
+
+
             {contextMap &&
             <Mermaid
                 chart={

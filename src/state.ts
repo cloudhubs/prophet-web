@@ -5,44 +5,39 @@ import {Configuration} from "./data/Configuration";
 const data: ProphetAppData = {
     global: {
         projectName: "TMS",
-        communication: `graph LR;
-        EMS-->CMS;
-        QMS-->CMS;`,
-        contextMap: `graph TD;
-        User-->Exam;
-        Exam-->Question;
-        Exam-->Answer;`,
+        communication: `graph LR;A-->B;B-->C;`,
+        contextMap: `graph TD;D-->E;E-->F;F-->G;`,
     },
     ms: [
         {
             name: "EMS",
             boundedContext: `graph LR;
-        User-->Exam;
-        Exam-->Choice;
-        Choice-->Answer;`,
+        I-->J;
+        J-->K;
+        I-->W;`,
         },
         {
             name: "CMS",
             boundedContext: `graph LR;
-        Question-->Language;
-        Question-->Code;
-        Question-->Choice;
-        Exam-->Question;`,
+        A-->B;
+        B-->C;
+        C-->D;
+        E-->F;`,
         },
     ],
     isMonolith: false
 }
 
 export const { GlobalStateProvider, useGlobalState } = createGlobalState({
-    repository: '',
+    backendUrl: 'localhost:8080',
+    repository: 'cloudhubs/tms',
     communicationGraph: `graph LR;
         A-->B;
         B-->C;
         B-->D[name];
       `,
     prophetAppData: data,
-    configuration: new Configuration('', '', false, false),
     ms: "",
-    contextMap: true,
+    contextMap: false,
     communication: false
 });
