@@ -3,5 +3,4 @@ coverage
 *.iml
 main
 node_modules
-public
 .DS_Store

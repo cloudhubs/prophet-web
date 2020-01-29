@@ -28,7 +28,7 @@ const data: ProphetAppData = {
     isMonolith: false
 }
 
-export const { GlobalStateProvider, useGlobalState } = createGlobalState({
+export const { useGlobalState } = createGlobalState({
     backendUrl: 'localhost:8080',
     repository: 'cloudhubs/tms',
     communicationGraph: `graph LR;

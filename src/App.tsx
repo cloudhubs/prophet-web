@@ -1,16 +1,18 @@
 import React, { StrictMode } from 'react';
 import './App.css';
 import ResponsiveDrawer from "./ui-elements/ResponsiveDrawer";
-import { GlobalStateProvider } from './state';
+import Canvas from "./components/Canvas";
+// import { GlobalStateProvider } from './state';
 
 class App extends React.Component<{}> {
     render() {
         return (
             <div>
                 <StrictMode>
-                    <GlobalStateProvider>
+                    {/*<GlobalStateProvider>*/}
                         <ResponsiveDrawer/>
-                    </GlobalStateProvider>
+                    {/*<Canvas/>*/}
+                    {/*</GlobalStateProvider>*/}
                 </StrictMode>
             </div>
         );
