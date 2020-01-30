@@ -1,5 +1,5 @@
 import React from "react";
-import {Box} from '@material-ui/core';
+import {Box, Button, TextField} from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import {useGlobalState} from "../state";
 import {ProphetAppData} from "../data/ProphetAppData";
@@ -66,9 +66,33 @@ const ConfigurationForm = () => {
             <Box component="span" m={1}>
                 https://github.com/<input type="text" value={vRepo} onChange={onChange}/>
                 <button type="submit" onClick={onSubmit}>Submit</button>
+
+            </Box>
+
+            <Box>
+                <TextField placeholder="Organization"/>
+                /
+                <TextField placeholder="Repository"/>
+
+                <Button
+                    variant="contained"
+                    color="secondary">
+                    Analyze
+                </Button>
+            </Box>
+
+            <Box>
+                Organization
+            </Box>
+
+            <Box>
+                Repositories
             </Box>
         </div>
     );
 }
+
+//curl -i https://api.github.com/users/cloudhubs
+
 
 export default ConfigurationForm;

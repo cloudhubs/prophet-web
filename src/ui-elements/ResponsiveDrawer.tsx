@@ -47,10 +47,12 @@ const useStyles = makeStyles((theme: Theme) =>
         toolbar: theme.mixins.toolbar,
         drawerPaper: {
             width: drawerWidth,
+            backgroundColor: theme.palette.background.default
         },
         content: {
             flexGrow: 1,
             padding: theme.spacing(3),
+            backgroundColor: theme.palette.background.default
         },
     }),
 );
