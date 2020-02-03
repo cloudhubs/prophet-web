@@ -69,25 +69,25 @@ const ConfigurationForm = () => {
 
             </Box>
 
-            <Box>
-                <TextField placeholder="Organization"/>
-                /
-                <TextField placeholder="Repository"/>
+            {/*<Box>*/}
+            {/*    <TextField placeholder="Organization"/>*/}
+            {/*    /*/}
+            {/*    <TextField placeholder="Repository"/>*/}
 
-                <Button
-                    variant="contained"
-                    color="secondary">
-                    Analyze
-                </Button>
-            </Box>
+            {/*    <Button*/}
+            {/*        variant="contained"*/}
+            {/*        color="secondary">*/}
+            {/*        Analyze*/}
+            {/*    </Button>*/}
+            {/*</Box>*/}
 
-            <Box>
-                Organization
-            </Box>
+            {/*<Box>*/}
+            {/*    Organization*/}
+            {/*</Box>*/}
 
-            <Box>
-                Repositories
-            </Box>
+            {/*<Box>*/}
+            {/*    Repositories*/}
+            {/*</Box>*/}
         </div>
     );
 }

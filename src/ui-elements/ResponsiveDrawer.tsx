@@ -114,15 +114,27 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
             </List>
             <ListSubheader>Microservices</ListSubheader>
             <Divider />
+
             <List>
-                {['EMS', 'CMS'].map((text, index) => (
-                    <ListItem button key={text} onClick={(e) => activateMs(text)}>
+                {prophetAppData.ms.map((ms) => (
+
+                    <ListItem button key={ms.name} onClick={(e) => activateMs(ms.name)}>
                         <ListItemIcon >{ <FolderIcon /> }</ListItemIcon>
-                        <ListItemText primary={text} />
+                        <ListItemText primary={ms.name} />
                     </ListItem>
-                ))}
+
+                    ))}
             </List>
-            <Divider />
+
+            {/*<List>*/}
+            {/*    {['EMS', 'CMS'].map((text, index) => (*/}
+            {/*        <ListItem button key={text} onClick={(e) => activateMs(text)}>*/}
+            {/*            <ListItemIcon >{ <FolderIcon /> }</ListItemIcon>*/}
+            {/*            <ListItemText primary={text} />*/}
+            {/*        </ListItem>*/}
+            {/*    ))}*/}
+            {/*</List>*/}
+            {/*<Divider />*/}
 
         </div>
     );
