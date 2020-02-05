@@ -30,7 +30,8 @@ const data: ProphetAppData = {
 
 export const { useGlobalState } = createGlobalState({
     backendUrl: 'localhost:8080',
-    repository: 'cloudhubs/tms',
+    organization: 'cloudhubs',
+    repository: 'tms',
     communicationGraph: `graph LR;
         A-->B;
         B-->C;

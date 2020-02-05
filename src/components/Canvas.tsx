@@ -20,7 +20,6 @@ const Canvas = () => {
             {/*    chart={*/}
             {/*        prophetAppData.global.communication} />*/}
 
-
             {contextMap &&
             <Mermaid
                 chart={
