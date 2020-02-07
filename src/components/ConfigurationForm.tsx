@@ -6,6 +6,7 @@ import {ProphetWebRequest} from "../data/ProphetWebRequest";
 import axios from "axios";
 import AutosizeInput from 'react-input-autosize';
 import ConfigList from './ConfigList';
+import RepositoryForm from "./RepositoryForm";
 
 const ConfigurationForm = () => {
     const [vData, uData] = useGlobalState('prophetAppData');
@@ -15,6 +16,7 @@ const ConfigurationForm = () => {
     const [vContextMap, uContextMap] = useGlobalState('contextMap');
     const [vConfigSingle, uConfigSingle] = useGlobalState('isConfigSingle');
     const [vConfigMultiple, uConfigMultiple] = useGlobalState('configMultiple');
+    
 
     const useStyles = makeStyles((theme: Theme) =>
         createStyles({
@@ -34,9 +36,7 @@ const ConfigurationForm = () => {
             boxik: {
                 padding: '10px'
             },
-            autoSizeInput: {
-                margin: '2px'
-            },
+            
             toggle: {
                 size: '40px'
             },
@@ -49,20 +49,7 @@ const ConfigurationForm = () => {
         uRepo(e.currentTarget.value)
     };
 
-    const handleCheckBox = (e: React.FormEvent<HTMLInputElement>): void => {
-        console.log(e.currentTarget.value);
-    };
-
-
-    const handleOrganization = (e: React.FormEvent<HTMLInputElement>): void => {
-        console.log(e.currentTarget.value);
-        uOrg(e.currentTarget.value);
-    };
-
-    const handleRepository = (e: React.FormEvent<HTMLInputElement>): void => {
-        console.log(e.currentTarget.value);
-        uRepo(e.currentTarget.value);
-    };
+    
 
     let checked = false;
 
@@ -93,12 +80,12 @@ const ConfigurationForm = () => {
                     <Paper className={classes.paper}>
                         Checkbox:
 
-                        <Checkbox
+                        {/* <Checkbox
                             checked={checked}
                             onChange={handleCheckBox}
                             value="primary"
                             inputProps={{ 'aria-label': 'primary checkbox' }}
-                        />
+                        /> */}
                     </Paper>
                 </Grid>
                 <Grid item xs={6}>
@@ -110,7 +97,7 @@ const ConfigurationForm = () => {
 
                 {vConfigMultiple.map((cm, index) => {
                     
-                    return <span>Org: {cm.organization}</span>
+                return <RepositoryForm index={index} key={index}/>
                         
                     })
                 }
@@ -118,12 +105,12 @@ const ConfigurationForm = () => {
                 <Paper className={classes.boxik}>
                     Checkbox:
 
-                    <Checkbox
+                    {/* <Checkbox
                         checked={checked}
                         onChange={handleCheckBox}
                         value="primary"
                         inputProps={{ 'aria-label': 'primary checkbox' }}
-                    />
+                    /> */}
                 </Paper>
 
 
@@ -148,29 +135,7 @@ const ConfigurationForm = () => {
                 {/*    ))}*/}
                 {/*</div>*/}
 
-                <Paper className={classes.boxik}>
-                    https://github.com/
-                    
-                    <AutosizeInput
-                        name="organization"
-                        value={vOrg}
-                        onChange={handleOrganization}
-                    />
-                    /
-                    <AutosizeInput
-                        className={classes.autoSizeInput}
-                        name="repository"
-                        value={vRepo}
-                        onChange={handleRepository}
-                    />
-                    <Checkbox
-                        checked={checked}
-                        onChange={handleCheckBox}
-                        value="primary"
-                        inputProps={{ 'aria-label': 'primary checkbox' }}
-                    />monolith
-
-                </Paper>
+                
 
 
             </Box>
