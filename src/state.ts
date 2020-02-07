@@ -1,6 +1,7 @@
 import { createGlobalState } from 'react-hooks-global-state';
 import {ProphetAppData} from "./data/ProphetAppData";
 import {Configuration} from "./data/Configuration";
+import {ReqConfigSingle} from "./data/ReqConfigSingle";
 
 const data: ProphetAppData = {
     global: {
@@ -40,5 +41,8 @@ export const { useGlobalState } = createGlobalState({
     prophetAppData: data,
     ms: "",
     contextMap: false,
-    communication: false
+    communication: false,
+    configMultiple: [new ReqConfigSingle(), new ReqConfigSingle()],
+    configSingle: {},
+    isConfigSingle: true,
 });
