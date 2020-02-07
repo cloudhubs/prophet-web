@@ -97,8 +97,7 @@ const ConfigurationForm = () => {
 
                 {vConfigMultiple.map((cm, index) => {
                     
-                return <RepositoryForm index={index} key={index}/>
-                        
+                return <RepositoryForm index={index} key={index}/> 
                     })
                 }
 

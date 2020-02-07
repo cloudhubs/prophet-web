@@ -25,37 +25,22 @@ const RepositoryForm = (props: RepositoryFormProps) => {
     const classes = useStyles();
 
     const handleMonolith = (e: React.FormEvent<HTMLInputElement>): void => {
-        console.log(e.currentTarget.value);
-        console.log(e.currentTarget.value);
-        console.log(e.currentTarget.value);
         let newVal =JSON.parse(JSON.stringify(vConfigMultiple));
-        // newVal[props.index].isMonolith = e.currentTarget.value;
+        newVal[props.index].isMonolith = !vConfigMultiple[props.index].isMonolith;
         uConfigMultiple(newVal);
     };
 
     const handleOrganization = (e: React.FormEvent<HTMLInputElement>): void => {
-        console.log(e.currentTarget.value);
         let newVal =JSON.parse(JSON.stringify(vConfigMultiple));
         newVal[props.index].organization = e.currentTarget.value;
-        console.log(newVal);
         uConfigMultiple(newVal);
-        console.log(vConfigMultiple);
     };
 
     const handleRepository = (e: React.FormEvent<HTMLInputElement>): void => {
-        console.log(e.currentTarget.value);
         let newVal =JSON.parse(JSON.stringify(vConfigMultiple));
-        console.log(newVal);
         newVal[props.index].repository = e.currentTarget.value;
-        console.log(newVal);
         uConfigMultiple(newVal);
-        console.log(vConfigMultiple);
     };
-
-    const handleRepo = (e: React.FormEvent<HTMLInputElement>): void => {
-        console.log(e.currentTarget.value);
-        uRepository(e.currentTarget.value);
-    }
 
     return (
 
@@ -64,11 +49,6 @@ const RepositoryForm = (props: RepositoryFormProps) => {
 
             <Paper className={classes.boxik}>
                     https://github.com/
-
-                    {/* <AutosizeInput className={classes.autoSizeInput} 
-                        name="myRepo"
-                        value={vRepository}
-                        onChange={handleRepo}/> */}
                     
                     <AutosizeInput
                         name="organization"
@@ -76,8 +56,7 @@ const RepositoryForm = (props: RepositoryFormProps) => {
                         value={vConfigMultiple[props.index].organization}
                         onChange={handleOrganization}
                     />
-                    /
-                    
+                    <span>/</span>
                     <AutosizeInput
                         className={classes.autoSizeInput}
                         name="repository"
@@ -91,10 +70,6 @@ const RepositoryForm = (props: RepositoryFormProps) => {
                         value={true}
                         inputProps={{ 'aria-label': 'primary checkbox' }}
                     />monolith
-
-                    : {vConfigMultiple[props.index].repository}
-
-
                 </Paper>
 
         </div>
