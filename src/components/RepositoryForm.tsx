@@ -10,7 +10,6 @@ interface RepositoryFormProps {
 
 const RepositoryForm = (props: RepositoryFormProps) => {
     const [vConfigMultiple, uConfigMultiple] = useGlobalState('configMultiple');
-    const [vRepository, uRepository] = useGlobalState('repository');
 
     const useStyles = makeStyles((theme: Theme) =>
         createStyles({
@@ -42,12 +41,21 @@ const RepositoryForm = (props: RepositoryFormProps) => {
         uConfigMultiple(newVal);
     };
 
+    const onRemove = () => {
+        let newVal =JSON.parse(JSON.stringify(vConfigMultiple));
+        newVal.splice(props.index, 1);
+        uConfigMultiple(newVal);
+    }
+
     return (
 
         <div>
             {props.index} :
 
             <Paper className={classes.boxik}>
+
+                    <button onClick={onRemove}>Remove</button>
+
                     https://github.com/
                     
                     <AutosizeInput
@@ -56,7 +64,7 @@ const RepositoryForm = (props: RepositoryFormProps) => {
                         value={vConfigMultiple[props.index].organization}
                         onChange={handleOrganization}
                     />
-                    <span>/</span>
+                    <span> / </span>
                     <AutosizeInput
                         className={classes.autoSizeInput}
                         name="repository"

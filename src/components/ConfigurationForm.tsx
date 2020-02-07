@@ -7,6 +7,7 @@ import axios from "axios";
 import AutosizeInput from 'react-input-autosize';
 import ConfigList from './ConfigList';
 import RepositoryForm from "./RepositoryForm";
+import { ReqConfigSingle } from "../data/ReqConfigSingle";
 
 const ConfigurationForm = () => {
     const [vData, uData] = useGlobalState('prophetAppData');
@@ -65,11 +66,16 @@ const ConfigurationForm = () => {
         uContextMap(true);
     }
 
+    const onAdd = () => {
+        let newVal =JSON.parse(JSON.stringify(vConfigMultiple));
+        newVal[newVal.length] = new ReqConfigSingle();
+        console.log(newVal);
+        uConfigMultiple(newVal);
+    }
+
     return (
         <div className={classes.root}>
-
             <ConfigList/>
-
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <Paper className={classes.paper}>
@@ -77,92 +83,23 @@ const ConfigurationForm = () => {
                     </Paper>
                 </Grid>
                 <Grid item xs={6}>
-                    <Paper className={classes.paper}>
-                        Checkbox:
-
-                        {/* <Checkbox
-                            checked={checked}
-                            onChange={handleCheckBox}
-                            value="primary"
-                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                        /> */}
-                    </Paper>
+                    
+                    {vConfigMultiple.map((cm, index) => {
+                    return <RepositoryForm index={index} key={index}/> 
+                        })
+                    }
+                    
                 </Grid>
                 <Grid item xs={6}>
                     <Paper className={classes.paper}>xs=6</Paper>
                 </Grid>
             </Grid>
-
             <Box component="span" m={2}>
-
-                {vConfigMultiple.map((cm, index) => {
-                    
-                return <RepositoryForm index={index} key={index}/> 
-                    })
-                }
-
-                <Paper className={classes.boxik}>
-                    Checkbox:
-
-                    {/* <Checkbox
-                        checked={checked}
-                        onChange={handleCheckBox}
-                        value="primary"
-                        inputProps={{ 'aria-label': 'primary checkbox' }}
-                    /> */}
-                </Paper>
-
-
-            </Box>
-
-            <button type="submit" onClick={onSubmit}>Add +</button>
-
-
-
-            <Box component="span" m={1}>
-
-
-
-                {/*<div>*/}
-                {/*    {prophetAppData.ms.map((ms, index) => (*/}
-
-                {/*        <ListItem button key={ms.name} onClick={(e) => activateMs(ms.name)}>*/}
-                {/*            <ListItemIcon >{ <FolderIcon /> }</ListItemIcon>*/}
-                {/*            <ListItemText primary={ms.name} />*/}
-                {/*        </ListItem>*/}
-
-                {/*    ))}*/}
-                {/*</div>*/}
-
                 
-
-
             </Box>
+            <button type="submit" onClick={onAdd}>Add +</button>
 
-            <Box>
-                {/*<span className={classes.url}>https://github.com/</span>*/}
-
-                {/*<TextField value="https://github.com/" disabled={true} className={classes.url}/>*/}
-
-                {/*<TextField placeholder="Organization" fullWidth/>*/}
-                {/*/*/}
-                {/*<TextField placeholder="Repository"/>*/}
-
-                <Button
-                    // variant="contained"
-                    color="primary">
-                    Analyze
-                </Button>
-
-            </Box>
-
-            {/*<Box>*/}
-            {/*    Organization*/}
-            {/*</Box>*/}
-
-            {/*<Box>*/}
-            {/*    Repositories*/}
-            {/*</Box>*/}
+            {/* <button type="submit" onClick={onSubmit}>Add +</button> */}
         </div>
     );
 }
