@@ -14,6 +14,7 @@ const ConfigurationForm = () => {
     const [vBackend] = useGlobalState('backendUrl');
     const [vContextMap, uContextMap] = useGlobalState('contextMap');
     const [vConfigSingle, uConfigSingle] = useGlobalState('isConfigSingle');
+    const [vConfigMultiple, uConfigMultiple] = useGlobalState('configMultiple');
 
     const useStyles = makeStyles((theme: Theme) =>
         createStyles({
@@ -63,7 +64,6 @@ const ConfigurationForm = () => {
         uRepo(e.currentTarget.value);
     };
 
-
     let checked = false;
 
     const onSubmit = async () => {
@@ -108,6 +108,13 @@ const ConfigurationForm = () => {
 
             <Box component="span" m={2}>
 
+                {vConfigMultiple.map((cm, index) => {
+                    
+                    return <span>Org: {cm.organization}</span>
+                        
+                    })
+                }
+
                 <Paper className={classes.boxik}>
                     Checkbox:
 
@@ -121,6 +128,9 @@ const ConfigurationForm = () => {
 
 
             </Box>
+
+            <button type="submit" onClick={onSubmit}>Add +</button>
+
 
 
             <Box component="span" m={1}>
@@ -162,7 +172,6 @@ const ConfigurationForm = () => {
 
                 </Paper>
 
-                <button type="submit" onClick={onSubmit}>Add +</button>
 
             </Box>
 

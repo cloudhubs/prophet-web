@@ -1,5 +1,5 @@
 export class ReqConfigSingle {
-    isMonolith: boolean;
-    organization: string;
-    repository: string;
+    isMonolith: boolean = false;
+    organization: string = "org";
+    repository: string = "repo";
 }
