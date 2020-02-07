@@ -107,7 +107,7 @@ export const { useGlobalState } = createGlobalState({
     ms: "",
     contextMap: false,
     communication: false,
-    configMultiple: [new ReqConfigSingle(0), new ReqConfigSingle(1)],
+    configMultiple: [new ReqConfigSingle(), new ReqConfigSingle()],
     configSingle: {},
     isConfigSingle: true,
 });

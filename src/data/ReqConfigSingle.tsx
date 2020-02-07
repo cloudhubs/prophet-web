@@ -3,8 +3,7 @@ export class ReqConfigSingle {
     organization: string;
     repository: string;
     index: number;
-    constructor(index: number){
-        this.index = index;
+    constructor(){
         this.organization = "";
         this.repository = "";
         this.isMonolith = false;
