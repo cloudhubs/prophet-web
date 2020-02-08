@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import CommentIcon from '@material-ui/icons/Comment';
+import {useGlobalState} from "../state";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function ConfigList() {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
+  // const vConfigMultiple = useGlobalState('configMultiple');
 
   const handleToggle = (value: number) => () => {
     const currentIndex = checked.indexOf(value);
@@ -38,6 +40,7 @@ export default function ConfigList() {
 
   return (
     <List className={classes.root}>
+
       {[0, 1, 2, 3].map(value => {
         const labelId = `checkbox-list-label-${value}`;
 
