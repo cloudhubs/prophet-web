@@ -77,6 +77,9 @@ const ConfigurationForm = () => {
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>
+                <Grid item xs={12}>
+                    <Button type="submit" onClick={onAdd} className={classes.addButton}>More Repositories</Button>
+                </Grid>
                 <Grid item xs={6}>
                     <ConfigList/>
                 </Grid>
@@ -88,9 +91,7 @@ const ConfigurationForm = () => {
                         </ol>
                     </Paper>
                 </Grid>
-                <Grid item xs={12}>
-                    <Button type="submit" onClick={onAdd} className={classes.addButton}>More Repositories</Button>
-                </Grid>
+                
             </Grid>
             
         </div>
