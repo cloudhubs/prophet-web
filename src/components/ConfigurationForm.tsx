@@ -27,8 +27,7 @@ const ConfigurationForm = () => {
                 padding: theme.spacing(0, 3),
             },
             paper: {
-                // maxWidth: 400,
-                margin: `${theme.spacing(1)}px auto`,
+                // margin: `${theme.spacing(1)}px auto`,
                 padding: theme.spacing(2),
             },
             url: {
@@ -41,6 +40,10 @@ const ConfigurationForm = () => {
             toggle: {
                 size: '40px'
             },
+            addButton: {
+                margin: `${theme.spacing(1)}px auto`,
+                // padding: theme.spacing(2),
+            }
         }),
     );
 
@@ -49,8 +52,6 @@ const ConfigurationForm = () => {
     const onChange = (e: React.FormEvent<HTMLInputElement>): void => {
         uRepo(e.currentTarget.value)
     };
-
-    
 
     let checked = false;
 
@@ -67,7 +68,7 @@ const ConfigurationForm = () => {
     }
 
     const onAdd = () => {
-        let newVal =JSON.parse(JSON.stringify(vConfigMultiple));
+        let newVal = JSON.parse(JSON.stringify(vConfigMultiple));
         newVal[newVal.length] = new ReqConfigSingle();
         console.log(newVal);
         uConfigMultiple(newVal);
@@ -75,31 +76,23 @@ const ConfigurationForm = () => {
 
     return (
         <div className={classes.root}>
-            <ConfigList/>
             <Grid container spacing={3}>
-                <Grid item xs={12}>
+                <Grid item xs={6}>
+                    <ConfigList/>
+                </Grid>
+                <Grid item xs={6}>
                     <Paper className={classes.paper}>
-                        
+                        <ol>
+                            <li>Insert organization and repository</li>
+                            <li>Check if the repository is monolith or set of microservices</li>
+                        </ol>
                     </Paper>
                 </Grid>
-                <Grid item xs={6}>
-                    
-                    {vConfigMultiple.map((cm, index) => {
-                    return <RepositoryForm index={index} key={index}/> 
-                        })
-                    }
-                    
-                </Grid>
-                <Grid item xs={6}>
-                    <Paper className={classes.paper}>xs=6</Paper>
+                <Grid item xs={12}>
+                    <Button type="submit" onClick={onAdd} className={classes.addButton}>More Repositories</Button>
                 </Grid>
             </Grid>
-            <Box component="span" m={2}>
-                
-            </Box>
-            <button type="submit" onClick={onAdd}>Add +</button>
-
-            {/* <button type="submit" onClick={onSubmit}>Add +</button> */}
+            
         </div>
     );
 }
