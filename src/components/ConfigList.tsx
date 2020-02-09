@@ -6,15 +6,17 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
 import CommentIcon from '@material-ui/icons/Comment';
 import {useGlobalState} from "../state";
+import { IconButton, Tooltip } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
+import RepositoryForm from './RepositoryForm';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: '100%',
-      maxWidth: 360,
+      // maxWidth: 410,
       backgroundColor: theme.palette.background.paper,
     },
   }),
@@ -23,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function ConfigList() {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
-  // const vConfigMultiple = useGlobalState('configMultiple');
+  const [vConfigMultiple, uConfigMultiple] = useGlobalState('configMultiple');
 
   const handleToggle = (value: number) => () => {
     const currentIndex = checked.indexOf(value);
@@ -38,15 +40,23 @@ export default function ConfigList() {
     setChecked(newChecked);
   };
 
+  const onRemove = (index: number) => {
+      if (vConfigMultiple.length > 1){
+        let newVal =JSON.parse(JSON.stringify(vConfigMultiple));
+        newVal.splice(index, 1);
+        uConfigMultiple(newVal);
+      }
+  }
+
   return (
     <List className={classes.root}>
 
-      {[0, 1, 2, 3].map(value => {
-        const labelId = `checkbox-list-label-${value}`;
+      {vConfigMultiple.map((cm, index) => {
+        const labelId = `checkbox-list-label-${index}`;
 
         return (
-          <ListItem key={value} role={undefined} dense button onClick={handleToggle(value)}>
-            <ListItemIcon>
+          <ListItem key={index} role={undefined} dense button>
+            {/* <ListItemIcon>
               <Checkbox
                 edge="start"
                 checked={checked.indexOf(value) !== -1}
@@ -54,12 +64,29 @@ export default function ConfigList() {
                 disableRipple
                 inputProps={{ 'aria-labelledby': labelId }}
               />
+            </ListItemIcon> */}
+            <ListItemText id={labelId} >
+              <RepositoryForm index={index} key={index}/>
+            </ListItemText>
+            {/* <ListItemText id={labelId} primary={`Monolith`}></ListItemText> */}
+            <ListItemIcon>
+
+              <Tooltip title="Monolith">
+              <Checkbox
+                    edge="start"
+                    // checked={checked.indexOf(value) !== -1}
+                    tabIndex={-1}
+                    disableRipple
+                    inputProps={{ 'aria-labelledby': labelId }}/>
+              </Tooltip>
             </ListItemIcon>
-            <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
             <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
-              </IconButton>
+              <Tooltip title="Remove">
+                <IconButton edge="end" aria-label="comments" onClick={(e) => onRemove(index)}>
+                  <DeleteIcon/>
+                </IconButton>
+              </Tooltip>
+              
             </ListItemSecondaryAction>
           </ListItem>
         );
