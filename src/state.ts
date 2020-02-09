@@ -75,21 +75,21 @@ const data: ProphetAppData = {
         contextMap: `graph TD;D-->E;E-->F;F-->G;`,
     },
     ms: [
-        // {
-        //     name: "EMS",
-        //     boundedContext: `graph LR;
-        // I-->J;
-        // J-->K;
-        // I-->W;`,
-        // },
-        // {
-        //     name: "CMS",
-        //     boundedContext: `graph LR;
-        // A-->B;
-        // B-->C;
-        // C-->D;
-        // E-->F;`,
-        // },
+        {
+            name: "EMS",
+            boundedContext: `graph LR;
+        I-->J;
+        J-->K;
+        I-->W;`,
+        },
+        {
+            name: "CMS",
+            boundedContext: `graph LR;
+        A-->B;
+        B-->C;
+        C-->D;
+        E-->F;`,
+        },
     ],
     isMonolith: false
 }

@@ -37,12 +37,13 @@ const Canvas = () => {
                         Context Map Diagram
                     </Typography>
                 </Grid>
+                <Grid item xs={12}>
                 {prophetAppData.ms.map((ms, index) => {
-                        if (ms.name === selectedMs) {
-                            return <Diagram ms={ms} />
-                        }
+                        return <Diagram ms={ms} />
                     })
                 }
+                </Grid>
+                
             </Grid>
             
             

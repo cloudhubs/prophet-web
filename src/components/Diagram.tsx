@@ -1,6 +1,6 @@
 import React from "react";
 import {Mermaid} from "./Mermaid"
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Grid, Paper } from "@material-ui/core";
 
 interface DiagramProps {
     ms?: any;
@@ -8,17 +8,22 @@ interface DiagramProps {
 
 const Diagram = (props: DiagramProps) => {
     return (
-        <div>
+        <Grid spacing={3} container>
             <Grid item xs={12}>
                 <Typography variant="h5">
-                    Context Map Diagram
+                    {props.ms.name}
                 </Typography>
             </Grid>
-            <Mermaid
-                chart={
-                    props.ms.boundedContext} />
-                            
-        </div>
+            <Grid item xs={12}>
+                <Paper>
+                    <Mermaid
+                    chart={
+                        props.ms.boundedContext} />
+                </Paper>
+            </Grid>
+            
+                  </Grid>          
+        
     );
 }
 
