@@ -24,7 +24,12 @@ const Canvas = () => {
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <Typography variant="h4">
-                        Overview
+                        Global
+                    </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    <Typography variant="h5">
+                        Context Map Diagram
                     </Typography>
                 </Grid>
                 <Grid item xs={12}>
@@ -34,7 +39,17 @@ const Canvas = () => {
                 </Grid>
                 <Grid item xs={12}>
                     <Typography variant="h5">
-                        Context Map Diagram
+                        Communication
+                    </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    <Paper>
+                        <Mermaid chart={prophetAppData.global.communication}/>
+                    </Paper>
+                </Grid>
+                <Grid item xs={12}>
+                    <Typography variant="h4">
+                        Microservices
                     </Typography>
                 </Grid>
                 <Grid item xs={12}>
