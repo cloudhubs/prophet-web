@@ -16,7 +16,7 @@ import { createStore } from "react-hooks-global-state";
 //             ...state,
 //             backendUrl: action.repository,
 //             configMultiple: [
-                
+
 //             ]
 //         };
 //         case "decrement":
@@ -76,23 +76,34 @@ const data: ProphetAppData = {
     },
     ms: [
         {
-            name: "EMS",
+            name: "msa",
             boundedContext: `graph LR;
         I-->J;
         J-->K;
         I-->W;`,
         },
-        {
-            name: "CMS",
-            boundedContext: `graph LR;
-        A-->B;
-        B-->C;
-        C-->D;
-        E-->F;`,
-        },
     ],
     isMonolith: false
 }
+
+// const data: ProphetAppData = {
+//     global: {
+//         projectName: "TMS",
+//         communication: ``,
+//         contextMap: ``,
+//     },
+//     ms: [
+//         {
+//             name: "EMS",
+//             boundedContext: ``,
+//         },
+//         {
+//             name: "CMS",
+//             boundedContext: ``,
+//         },
+//     ],
+//     isMonolith: false
+// }
 
 export const { useGlobalState } = createGlobalState({
     backendUrl: 'localhost:8080',
@@ -104,6 +115,7 @@ export const { useGlobalState } = createGlobalState({
         B-->D[name];
       `,
     prophetAppData: data,
+    loading: false,
     ms: "",
     contextMap: false,
     communication: false,
