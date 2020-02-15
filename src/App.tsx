@@ -16,7 +16,7 @@ class App extends React.Component<{}> {
                     {/*<Canvas/>*/}
                     {/*</GlobalStateProvider>*/}
                 {/*</StrictMode>*/}
-                <BrowserRouter basename="/calendar" >
+                <BrowserRouter basename="/prophet" >
                 {/* … */}
                     <ResponsiveDrawer/>
                 </BrowserRouter>
