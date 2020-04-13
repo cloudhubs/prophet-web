@@ -18,8 +18,10 @@ import { ListSubheader } from '@material-ui/core';
 import Communication from "../components/Communication";
 import Canvas from "../components/Canvas";
 import {useGlobalState} from "../state";
+import {red} from "@material-ui/core/colors";
 
-const drawerWidth = 240;
+// const drawerWidth = 240;
+const drawerWidth = 0;
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -37,6 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 width: `calc(100% - ${drawerWidth}px)`,
                 marginLeft: drawerWidth,
             },
+            backgroundColor: '#ac4444'
         },
         menuButton: {
             marginRight: theme.spacing(2),
@@ -70,6 +73,7 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
     const [selectedMs, updateMs] = useGlobalState('ms');
     const [contextMap, updateContextMap] = useGlobalState('contextMap');
     const [communication, updateCommunication] = useGlobalState('communication');
+    const displayDrawer = false;
 
     const activateMs = (ms: string) => {
         console.log(ms);
@@ -114,10 +118,8 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
             </List>
             <ListSubheader>Microservices</ListSubheader>
             <Divider />
-
             <List>
                 {prophetAppData.ms.map((ms) => (
-
                     <ListItem button key={ms.name} onClick={(e) => activateMs(ms.name)}>
                         <ListItemIcon >{ <FolderIcon /> }</ListItemIcon>
                         <ListItemText primary={ms.name} />
@@ -125,16 +127,6 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
 
                     ))}
             </List>
-
-            {/*<List>*/}
-            {/*    {['EMS', 'CMS'].map((text, index) => (*/}
-            {/*        <ListItem button key={text} onClick={(e) => activateMs(text)}>*/}
-            {/*            <ListItemIcon >{ <FolderIcon /> }</ListItemIcon>*/}
-            {/*            <ListItemText primary={text} />*/}
-            {/*        </ListItem>*/}
-            {/*    ))}*/}
-            {/*</List>*/}
-            {/*<Divider />*/}
 
         </div>
     );
@@ -153,40 +145,43 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
                         <MenuIcon/>
                     </IconButton>
                     <Typography variant="h6" noWrap>
-                        Prophet App
+                        Centralized Perspective of Microservice Mesh-Based Applications
                     </Typography>
                 </Toolbar>
             </AppBar>
+            {displayDrawer &&
+                <nav className={classes.drawer} aria-label="mailbox folders">
+                    {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+                    <Hidden smUp implementation="css">
+                        <Drawer
+                            container={container}
+                            variant="temporary"
+                            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+                            open={mobileOpen}
+                            onClose={handleDrawerToggle}
+                            classes={{
+                                paper: classes.drawerPaper,
+                            }}
+                            ModalProps={{
+                                keepMounted: true, // Better open performance on mobile.
+                            }}>
+                            {drawer}
+                        </Drawer>
+                    </Hidden>
+                    <Hidden xsDown implementation="css">
+                        <Drawer
+                            classes={{
+                                paper: classes.drawerPaper,
+                            }}
+                            variant="permanent"
+                            open>
+                            {drawer}
+                        </Drawer>
+                    </Hidden>
+                </nav>
+            }
 
-            <nav className={classes.drawer} aria-label="mailbox folders">
-                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-                <Hidden smUp implementation="css">
-                    <Drawer
-                        container={container}
-                        variant="temporary"
-                        anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-                        open={mobileOpen}
-                        onClose={handleDrawerToggle}
-                        classes={{
-                            paper: classes.drawerPaper,
-                        }}
-                        ModalProps={{
-                            keepMounted: true, // Better open performance on mobile.
-                        }}>
-                        {drawer}
-                    </Drawer>
-                </Hidden>
-                <Hidden xsDown implementation="css">
-                    <Drawer
-                        classes={{
-                            paper: classes.drawerPaper,
-                        }}
-                        variant="permanent"
-                        open>
-                        {drawer}
-                    </Drawer>
-                </Hidden>
-            </nav>
+
             <main className={classes.content}>
                 <div className={classes.toolbar} />
                 <Canvas/>
