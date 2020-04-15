@@ -5,6 +5,8 @@ import {useGlobalState} from '../state';
 import ConfigurationForm from "./ConfigurationForm";
 import { Paper, Typography, Grid, Divider } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import Abstract from "./Abstract";
+import Instructions from "./Instructions";
 
 const Canvas = () => {
     const [prophetAppData, update] = useGlobalState('prophetAppData');
@@ -31,6 +33,13 @@ const Canvas = () => {
 
     return (
         <div>
+
+            <Abstract />
+
+            <Instructions />
+
+
+
             <ConfigurationForm/>
             <Grid container spacing={3} className={classes.root}>
                 <Grid item xs={12}>
