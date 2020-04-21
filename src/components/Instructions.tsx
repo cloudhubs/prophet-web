@@ -14,6 +14,9 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import CloseIcon from '@material-ui/icons/Close';
 import InboxIcon from '@material-ui/icons/Inbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
+import {useGlobalState} from '../state';
+import {ErrorItem} from "../data/ErrorItem";
+import {AnalysisErrors} from "../data/AnalysisErrors";
 
 const Instructions = () => {
 
@@ -32,14 +35,8 @@ const Instructions = () => {
         setChecked(newChecked);
     };
 
-    const listItemValues = [
-        {
-            label: "Context map is present",
-        },
-        {
 
-        }
-    ]
+    const [analysisError] = useGlobalState('analysisError');
 
     return (
         <React.Fragment>
@@ -54,8 +51,8 @@ const Instructions = () => {
 
                 <Paper>
                     <List>
-                        {[0, 1, 2, 3].map((value) => {
-                            const labelId = `checkbox-list-label-${value}`;
+                        {analysisError.errors.map((errorItem: ErrorItem) => {
+                            const value = errorItem.error;
 
                             return (
                                 <ListItem key={value} role={undefined} dense button>
@@ -67,11 +64,9 @@ const Instructions = () => {
                                             checked={true}
                                             tabIndex={-1}
                                             disableRipple
-                                            inputProps={{ 'aria-labelledby': labelId }} />
-
-
+                                            inputProps={{ 'aria-labelledby': value }} />
                                     </ListItemIcon>
-                                    <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+                                    <ListItemText id={value} primary={value} />
                                     {/*<ListItemSecondaryAction>*/}
                                     {/*    <IconButton edge="end" aria-label="comments">*/}
                                     {/*        <CommentIcon />*/}
