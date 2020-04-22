@@ -1,6 +1,6 @@
 import React from "react";
 import {Mermaid} from "./Mermaid"
-import {useGlobalState} from '../state';
+import {useGlobalState} from '../state/appState';
 
 const ContextMap = () => {
     const [value, update] = useGlobalState('communicationGraph');

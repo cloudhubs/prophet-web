@@ -1,7 +1,7 @@
 import React from "react";
 import {Button, Paper, Grid, IconButton, Tooltip, Fab, Typography, Divider} from '@material-ui/core';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import {useGlobalState} from "../state";
+import {useGlobalState} from "../state/appState";
 import {ProphetWebRequest} from "../data/ProphetWebRequest";
 import axios from "axios";
 import AutosizeInput from 'react-input-autosize';

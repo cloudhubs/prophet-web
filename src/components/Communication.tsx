@@ -1,6 +1,6 @@
 import React from "react";
 import mermaid from "mermaid";
-import {useGlobalState} from '../state';
+import {useGlobalState} from '../state/appState';
 
 mermaid.initialize({
     startOnLoad: true

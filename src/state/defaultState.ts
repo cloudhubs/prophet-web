@@ -1,8 +1,8 @@
-import { createGlobalState } from 'react-hooks-global-state';
-import {ProphetAppData} from "./data/ProphetAppData";
-import {ReqConfigSingle} from "./data/ReqConfigSingle";
-import {AnalysisErrors} from "./data/AnalysisErrors";
-import {ErrorItem} from "./data/ErrorItem";
+import {ProphetAppData} from "../data/ProphetAppData";
+import {AnalysisErrors} from "../data/AnalysisErrors";
+import {ErrorItem} from "../data/ErrorItem";
+import {ReqConfigSingle} from "../data/ReqConfigSingle";
+import {State} from "./state";
 
 const data: ProphetAppData = {
     global: {
@@ -31,7 +31,7 @@ function getAnalysisErrors() {
     return analysisErrors;
 }
 
-export const { useGlobalState } = createGlobalState({
+export const defaultState: State = {
     backendUrl: 'localhost:8080',
     organization: 'cloudhubs',
     repository: 'tms',
@@ -49,4 +49,4 @@ export const { useGlobalState } = createGlobalState({
     configSingle: {},
     isConfigSingle: true,
     analysisError: getAnalysisErrors()
-});
+}
