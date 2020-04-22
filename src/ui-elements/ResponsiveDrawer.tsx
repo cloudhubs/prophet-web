@@ -17,7 +17,7 @@ import FolderIcon from '@material-ui/icons/Folder';
 import { ListSubheader } from '@material-ui/core';
 import Communication from "../components/Communication";
 import Canvas from "../components/Canvas";
-import {useGlobalState} from "../state";
+import {useGlobalState} from "../state/appState";
 import {red} from "@material-ui/core/colors";
 
 // const drawerWidth = 240;

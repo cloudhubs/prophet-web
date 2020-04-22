@@ -1,5 +1,5 @@
 import React from "react";
-import {useGlobalState} from '../state';
+import {useGlobalState} from '../state/appState';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import AutosizeInput from 'react-input-autosize';
 

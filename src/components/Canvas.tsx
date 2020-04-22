@@ -1,7 +1,7 @@
 import React from "react";
 import {Mermaid} from "./Mermaid"
 import Diagram from "./Diagram"
-import {useGlobalState} from '../state';
+import {useGlobalState} from '../state/appState';
 import ConfigurationForm from "./ConfigurationForm";
 import { Paper, Typography, Grid, Divider } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
