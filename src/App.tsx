@@ -3,7 +3,7 @@ import './App.css';
 import {HashRouter as Router} from "react-router-dom"
 import {withRoot} from "./withRoot";
 import { createBrowserHistory } from 'history';
-import ResponsiveDrawer from "./ui-elements/ResponsiveDrawer";
+import ResponsiveDrawer from "./ui/ResponsiveDrawer";
 import { ThemeProvider } from '@material-ui/core/styles';
 import prophetTheme from "./prophetTheme";
 
