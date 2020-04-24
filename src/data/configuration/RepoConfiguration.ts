@@ -1,7 +1,6 @@
 import {ProphetAppData} from "../ProphetAppData";
 import {AnalysisErrors} from "../AnalysisErrors";
 
-
 export class RepoConfiguration {
     id: number;
     data: ProphetAppData;

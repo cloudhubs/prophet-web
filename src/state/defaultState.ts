@@ -3,6 +3,7 @@ import {AnalysisErrors} from "../data/AnalysisErrors";
 import {ErrorItem} from "../data/ErrorItem";
 import {ReqConfigSingle} from "../data/ReqConfigSingle";
 import {State} from "./state";
+import {ProphetConfigs} from "../data/configuration/ProphetConfigs";
 
 const data: ProphetAppData = {
     global: {
@@ -32,6 +33,10 @@ function getAnalysisErrors() {
 }
 
 export const defaultState: State = {
+    prophetConfigs: {
+        repoConfigurations: []
+    },
+    //deprecated
     backendUrl: 'localhost:8080',
     organization: 'cloudhubs',
     repository: 'tms',

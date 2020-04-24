@@ -1,6 +1,6 @@
 import {RepoConfiguration} from "./RepoConfiguration";
 
 
-export class ProphetConfigs {
+export type ProphetConfigs = {
     repoConfigurations: RepoConfiguration[];
 }

@@ -6,9 +6,21 @@ import { createBrowserHistory } from 'history';
 import ResponsiveDrawer from "./ui/ResponsiveDrawer";
 import { ThemeProvider } from '@material-ui/core/styles';
 import prophetTheme from "./prophetTheme";
+import {useEffect} from "react";
+import FetchMetadata from "./http/FetchMetadata";
 
 const App = () => {
     const history = createBrowserHistory();
+
+    const getMetadata = async () => {
+        const repos = await FetchMetadata.getAllReposFromOrganization("cloudhubs");
+        console.log(repos);
+    }
+
+    useEffect( () => {
+        getMetadata();
+    }, []);
+
     return (
         <div>
             <ThemeProvider theme={prophetTheme}>

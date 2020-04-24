@@ -13,9 +13,10 @@ const FetchMetadata = {
         });
         if (response != null){
             const body = await response.json();
-            //ToDo: trigger action
+            return body;
         } else {
             console.log("server error");
+            return [];
         }
     },
 
