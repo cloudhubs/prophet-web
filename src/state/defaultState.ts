@@ -1,7 +1,7 @@
 import {ProphetAppData} from "../data/ProphetAppData";
-import {AnalysisErrors} from "../data/AnalysisErrors";
+import {ServerErrors} from "../data/ServerErrors";
 import {ErrorItem} from "../data/ErrorItem";
-import {ReqConfigSingle} from "../data/ReqConfigSingle";
+import {RepoConfig} from "../data/RepoConfig";
 import {State} from "./state";
 import {ProphetConfigs} from "../data/configuration/ProphetConfigs";
 
@@ -24,7 +24,7 @@ const data: ProphetAppData = {
 }
 
 function getAnalysisErrors() {
-    let analysisErrors = new AnalysisErrors();
+    let analysisErrors = new ServerErrors();
     let annotationError = new ErrorItem("No supported annotations found");
     let javaError = new ErrorItem("Java code not found");
     analysisErrors.errors.push(annotationError);
@@ -50,7 +50,7 @@ export const defaultState: State = {
     ms: "",
     contextMap: false,
     communication: false,
-    configMultiple: [new ReqConfigSingle(), new ReqConfigSingle()],
+    configMultiple: [new RepoConfig(), new RepoConfig()],
     configSingle: {},
     isConfigSingle: true,
     analysisError: getAnalysisErrors()

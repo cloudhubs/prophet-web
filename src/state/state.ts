@@ -1,6 +1,6 @@
-import {ReqConfigSingle} from "../data/ReqConfigSingle";
+import {RepoConfig} from "../data/RepoConfig";
 import {ProphetAppData} from "../data/ProphetAppData";
-import {AnalysisErrors} from "../data/AnalysisErrors";
+import {ServerErrors} from "../data/ServerErrors";
 import {ProphetConfigs} from "../data/configuration/ProphetConfigs";
 
 
@@ -15,9 +15,9 @@ export type State = {
     ms: string;
     contextMap: boolean;
     communication: boolean;
-    configMultiple: ReqConfigSingle[];
+    configMultiple: RepoConfig[];
     configSingle: {};
     isConfigSingle: boolean;
-    analysisError: AnalysisErrors;
+    analysisError: ServerErrors;
 
 }
