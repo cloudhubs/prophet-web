@@ -7,7 +7,7 @@ import axios from "axios";
 import AutosizeInput from 'react-input-autosize';
 import ConfigList from './ConfigList';
 import RepositoryForm from "./RepositoryForm";
-import { ReqConfigSingle } from "../data/ReqConfigSingle";
+import { RepoConfig } from "../data/RepoConfig";
 import AddIcon from '@material-ui/icons/Add';
 
 

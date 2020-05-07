@@ -11,7 +11,7 @@ import {useGlobalState} from "../state/appState";
 import DeleteIcon from '@material-ui/icons/Delete';
 import RepositoryForm from './RepositoryForm';
 import AddIcon from '@material-ui/icons/Add';
-import { ReqConfigSingle } from '../data/ReqConfigSingle';
+import { RepoConfig } from '../data/RepoConfig';
 import NavigationIcon from '@material-ui/icons/Navigation';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -60,7 +60,7 @@ export default function ConfigList() {
 
   const onAdd = () => {
     let newVal = JSON.parse(JSON.stringify(vConfigMultiple));
-    newVal[newVal.length] = new ReqConfigSingle();
+    newVal[newVal.length] = new RepoConfig();
     console.log(newVal);
     uConfigMultiple(newVal);
   }

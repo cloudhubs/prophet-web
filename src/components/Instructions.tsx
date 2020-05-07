@@ -16,7 +16,7 @@ import InboxIcon from '@material-ui/icons/Inbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import {useGlobalState} from '../state/appState';
 import {ErrorItem} from "../data/ErrorItem";
-import {AnalysisErrors} from "../data/AnalysisErrors";
+import {ServerErrors} from "../data/ServerErrors";
 
 const Instructions = () => {
 

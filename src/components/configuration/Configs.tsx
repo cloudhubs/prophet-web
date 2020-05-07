@@ -1,6 +1,6 @@
 import React from "react";
 import {useGlobalState} from '../../state/appState';
-import {RepoConfiguration} from "../../data/configuration/RepoConfiguration";
+import {RepoConfig} from "../../data/configuration/RepoConfig";
 import SingleConfig from "./SingleConfig";
 
 const Configs = () => {
@@ -9,7 +9,7 @@ const Configs = () => {
 
     return (
         <React.Fragment>
-            {prophetConfigs.repoConfigurations.map((config: RepoConfiguration) => (
+            {prophetConfigs.repoConfigurations.map((config: RepoConfig) => (
                 <React.Fragment>
                     <SingleConfig conf={config}  />
                 </React.Fragment>
