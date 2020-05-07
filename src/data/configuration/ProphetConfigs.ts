@@ -1,6 +1,6 @@
-import {RepoConfiguration} from "./RepoConfiguration";
+import {RepoConfig} from "./RepoConfig";
 
 
 export type ProphetConfigs = {
-    repoConfigurations: RepoConfiguration[];
+    repoConfigurations: RepoConfig[];
 }

@@ -1,5 +1,5 @@
-import {ReqConfigSingle} from "./ReqConfigSingle";
+import {RepoConfig} from "./RepoConfig";
 
 export class ReqConfigMultiple {
-    configurations: ReqConfigSingle[] = new Array(3);
+    configurations: RepoConfig[] = new Array(3);
 }

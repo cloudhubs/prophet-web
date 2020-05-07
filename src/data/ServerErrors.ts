@@ -1,5 +1,5 @@
 import {ErrorItem} from "./ErrorItem";
 
-export class AnalysisErrors {
+export class ServerErrors {
     errors: ErrorItem[] =[];
 }
