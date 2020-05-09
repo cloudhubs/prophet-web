@@ -22,4 +22,4 @@ const SingleError = ({conf: ReqConfigSingle}) => {
         </React.Fragment>
     )
 }
-export default SingleConfig;
+export default SingleError;
