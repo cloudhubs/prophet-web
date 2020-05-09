@@ -53,5 +53,6 @@ export const defaultState: State = {
     configMultiple: [new RepoConfig(), new RepoConfig()],
     configSingle: {},
     isConfigSingle: true,
-    analysisError: getAnalysisErrors()
+    analysisError: getAnalysisErrors(),
+    githubUrl: ""
 }

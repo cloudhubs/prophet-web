@@ -8,6 +8,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import prophetTheme from "./prophetTheme";
 import {useEffect} from "react";
 import FetchMetadata from "./http/FetchMetadata";
+import EffectsRegister from "./state/EffectsRegister";
 
 const App = () => {
     const history = createBrowserHistory();
@@ -25,6 +26,7 @@ const App = () => {
         <div>
             <ThemeProvider theme={prophetTheme}>
                 <Router history={history} basename={"/"} >
+                    <EffectsRegister />
                     <ResponsiveDrawer/>
                 </Router>
             </ThemeProvider>
