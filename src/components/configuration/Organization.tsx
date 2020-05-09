@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Organization = ({conf: ReqConfigSingle}) => {
 
     const header = (

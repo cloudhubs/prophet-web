@@ -5,7 +5,10 @@ import React from "react";
  * @param RepoConfig Repository configuration
  * @constructor
  * @action Update RepoConfig to parent component from ConfigForm
- * @action
+ * @action Update Organization into OrganizationDetail
+ * @action Update Repository into RepositoryDetail
+ * @action Update Errors into ServerErrors
+ * @component: ConfigForm, ServerErrors, OrganizationDetail, RepositoryDetail
  */
 const SingleConfig = ({conf: RepoConfig}) => {
 

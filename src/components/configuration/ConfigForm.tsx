@@ -1,10 +1,12 @@
 import React from "react";
 
-const ConfigForms = () => {
+const ConfigForm = () => {
 
     //state: organization, repository
 
-    //actions:
+    //actions: on change send updated config
+
+    //components: Organization, Repository
 
     return (
         <React.Fragment>
@@ -12,4 +14,4 @@ const ConfigForms = () => {
         </React.Fragment>
     )
 }
-export default ConfigForms;
+export default ConfigForm;
