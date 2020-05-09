@@ -19,5 +19,6 @@ export type State = {
     configSingle: {};
     isConfigSingle: boolean;
     analysisError: ServerErrors;
+    githubUrl: string;
 
 }
