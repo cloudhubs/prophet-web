@@ -1,6 +1,6 @@
 import React from "react";
 
-const Repository = ({conf: ReqConfigSingle}) => {
+const SingleError = ({conf: ReqConfigSingle}) => {
 
     const header = (
         <>
@@ -22,4 +22,4 @@ const Repository = ({conf: ReqConfigSingle}) => {
         </React.Fragment>
     )
 }
-export default Repository;
+export default SingleConfig;

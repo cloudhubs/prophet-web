@@ -1,12 +1,12 @@
 import {ProphetAppData} from "../ProphetAppData";
-import {AnalysisErrors} from "../AnalysisErrors";
+import {ServerErrors} from "../ServerErrors";
 
-export class RepoConfiguration {
+export class RepoConfig {
     id: number;
     data: ProphetAppData;
     repo: string;
     org: string;
     detail: {};
-    analysisErrors: AnalysisErrors;
+    analysisErrors: ServerErrors;
     isMonolith: boolean;
 }

@@ -1,9 +1,16 @@
 import React from "react";
-import {ReqConfigSingle} from "../../data/ReqConfigSingle";
 
-
-
-const SingleConfig = ({conf: ReqConfigSingle}) => {
+/**
+ * Represents Configuration of a specific github repository
+ * @param RepoConfig Repository configuration
+ * @constructor
+ * @action Update RepoConfig to parent component from ConfigForm
+ * @action Update Organization into OrganizationDetail
+ * @action Update Repository into RepositoryDetail
+ * @action Update Errors into ServerErrors
+ * @component: ConfigForm, ServerErrors, OrganizationDetail, RepositoryDetail
+ */
+const SingleConfig = ({conf: RepoConfig}) => {
 
     const header = (
         <>

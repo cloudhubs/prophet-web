@@ -1,4 +1,4 @@
-export class ReqConfigSingle {
+export class RepoConfig {
     isMonolith: boolean;
     organization: string;
     repository: string;
