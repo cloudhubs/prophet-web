@@ -1,10 +1,5 @@
 import React from "react";
-import ConfigForm from "./ConfigForm";
-import {RepoConfig} from "../../data/configuration/RepoConfig";
 
-type ConfigProps = {
-    conf: RepoConfig
-}
 /**
  * Represents Configuration of a specific github repository
  * @param RepoConfig Repository configuration
@@ -15,27 +10,13 @@ type ConfigProps = {
  * @action Update Errors into ServerErrors
  * @component: ConfigForm, ServerErrors, OrganizationDetail, RepositoryDetail
  */
-const SingleConfig = ({conf}: ConfigProps) => {
+const ConfigFormWrapper = ({conf: RepoConfig}) => {
 
     const header = (
         <>
 
         </>
     );
-
-    const githubUrlInput = (
-        <>
-            <ConfigForm />
-        </>
-    )
-
-    const errorCodes = (
-        <>
-            {conf.analysisErrors.errors.map(err => {
-                //input error to component
-            })}
-        </>
-    )
 
     const footer = (
         <>
@@ -51,4 +32,4 @@ const SingleConfig = ({conf}: ConfigProps) => {
         </React.Fragment>
     )
 }
-export default SingleConfig;
+export default ConfigFormWrapper;

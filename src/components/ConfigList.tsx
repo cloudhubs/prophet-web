@@ -13,6 +13,7 @@ import RepositoryForm from './RepositoryForm';
 import AddIcon from '@material-ui/icons/Add';
 import { RepoConfig } from '../data/RepoConfig';
 import NavigationIcon from '@material-ui/icons/Navigation';
+import ConfigForm from "./configuration/ConfigForm";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -92,6 +93,9 @@ export default function ConfigList() {
 
   return (
     <>
+
+      <ConfigForm />
+
     <List className={classes.root}>
 
       {vConfigMultiple.map((cm, index) => {
@@ -99,6 +103,7 @@ export default function ConfigList() {
 
         return (
           <>
+
           <ListItem key={index} role={undefined} dense button>
             {/* <ListItemIcon>
               <Checkbox
@@ -110,7 +115,8 @@ export default function ConfigList() {
               />
             </ListItemIcon> */}
             <ListItemText id={labelId} >
-              <RepositoryForm index={index} key={index}/>
+
+              {/*<RepositoryForm index={index} key={index}/>*/}
             </ListItemText>
             {/* <ListItemText id={labelId} primary={`Monolith`}></ListItemText> */}
             <ListItemIcon>
