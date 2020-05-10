@@ -11,7 +11,7 @@ import ActionsRegister from "../../state/ActionsRegister";
  */
 const ConfigForm = () => {
 
-    const [url, setUrl] = useState<string>("");
+    const [url, setUrl] = useState<string>("https://github.com/cloudhubs/tms");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUrl(e.target.value)
@@ -23,7 +23,6 @@ const ConfigForm = () => {
                 <TextField
                     id="github-url"
                     type="text"
-                    label="Label"
                     style={{ margin: 8 }}
                     placeholder="Github URL here"
                     fullWidth

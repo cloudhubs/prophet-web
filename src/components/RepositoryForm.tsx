@@ -2,6 +2,7 @@ import React from "react";
 import {useGlobalState} from '../state/appState';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import AutosizeInput from 'react-input-autosize';
+import ConfigForm from "./configuration/ConfigForm";
 
 interface RepositoryFormProps {
     index: number;
@@ -43,7 +44,12 @@ const RepositoryForm = (props: RepositoryFormProps) => {
     return (
 
         <div>
-            https://github.com/
+
+            <span>
+                {'https://github.com/'}
+            </span>
+
+
             
             <AutosizeInput
                 name="organization"
