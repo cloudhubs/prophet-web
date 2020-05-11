@@ -1,38 +1,40 @@
 import * as React from 'react';
-import './App.css';
+// import './App.css';
 import {HashRouter as Router} from "react-router-dom"
 import {withRoot} from "./withRoot";
 import { createBrowserHistory } from 'history';
-import ResponsiveDrawer from "./ui/ResponsiveDrawer";
+// theme
 import { ThemeProvider } from '@material-ui/core/styles';
 import prophetTheme from "./prophetTheme";
-import {useEffect} from "react";
-import FetchMetadata from "./http/FetchMetadata";
+import prophetStyles from "./prophetStyles";
+// material ui
+import CssBaseline from '@material-ui/core/CssBaseline';
+// components
 import EffectsRegister from "./state/EffectsRegister";
+import MainCanvas from "./components/main/MainCanvas";
+import AppFooter from "./components/main/AppFooter";
+import AppHeader from "./components/main/AppHeader";
 
 const App = () => {
     const history = createBrowserHistory();
-
-    const getMetadata = async () => {
-        const repos = await FetchMetadata.getAllReposFromOrganization("cloudhubs");
-        console.log(repos);
-    }
-
-    useEffect( () => {
-        getMetadata();
-    }, []);
-
+    const classes = prophetStyles();
     return (
-        <div>
+        <div className={classes.root}>
+            <CssBaseline />
             <ThemeProvider theme={prophetTheme}>
                 <Router history={history} basename={"/"} >
                     <EffectsRegister />
-                    <ResponsiveDrawer/>
+                    <AppHeader/>
+                    <div className={classes.content}>
+                        <MainCanvas />
+                    </div>
+                    <div className={classes.footer}>
+                        <AppFooter />
+                    </div>
                 </Router>
             </ThemeProvider>
         </div>
     );
-
 }
 
 export default withRoot(App);

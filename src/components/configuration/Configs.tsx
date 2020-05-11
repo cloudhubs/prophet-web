@@ -10,16 +10,6 @@ import SingleConfig from "./SingleConfig";
  */
 const Configs = () => {
 
-    const [prophetConfigs] = useGlobalState('prophetConfigs');
 
-    return (
-        <React.Fragment>
-            {prophetConfigs.repoConfigurations.map((config: RepoConfig) => (
-                <React.Fragment>
-                    <SingleConfig conf={config}  />
-                </React.Fragment>
-            ))}
-        </React.Fragment>
-    )
 }
 export default Configs;

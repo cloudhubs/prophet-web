@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * Represents Configuration of a specific github repository
+ * Represents Configurations of a specific github repository
  * @param RepoConfig Repository configuration
  * @constructor
  * @action Update RepoConfig to parent component from ConfigForm

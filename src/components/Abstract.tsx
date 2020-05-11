@@ -9,7 +9,7 @@ const Abstract = () => {
     return (
         <Box>
             <Paper>
-                <Typography variant="h6" align="justify" color="textSecondary" component="p" paragraph={true} className={classes.root}>
+                <Typography variant="h6" align="justify" color="textSecondary" component="p" paragraph={true} className={classes.box}>
                     Microservice architecture provides a number of benefits for enterprise applications, including improved scalability, shorter deployment and update cycle,
                     and increased flexibility in choosing different languages and frameworks for specific parts of an application. These benefits come from microservices'
                     independence from each other, both in development and deployment. However, this separation leads to a lack of a centralized view of the overall application's functionality.
