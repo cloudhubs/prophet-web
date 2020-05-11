@@ -1,6 +1,6 @@
 import React from "react";
 import ConfigForm from "./ConfigForm";
-import {RepoConfig} from "../../data/configuration/RepoConfig";
+import {RepoConfig} from "../../model/configuration/RepoConfig";
 
 type ConfigProps = {
     conf: RepoConfig

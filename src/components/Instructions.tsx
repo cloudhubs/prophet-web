@@ -15,8 +15,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import InboxIcon from '@material-ui/icons/Inbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import {useGlobalState} from '../state/appState';
-import {ErrorItem} from "../data/ErrorItem";
-import {ServerErrors} from "../data/ServerErrors";
+import {ErrorItem} from "../model/ErrorItem";
+import {ServerErrors} from "../model/ServerErrors";
 
 const Instructions = () => {
 

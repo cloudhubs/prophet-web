@@ -1,6 +1,6 @@
 import React from "react";
 import {useGlobalState} from '../../state/appState';
-import {RepoConfig} from "../../data/configuration/RepoConfig";
+import {RepoConfig} from "../../model/configuration/RepoConfig";
 import SingleConfig from "./SingleConfig";
 
 /**
