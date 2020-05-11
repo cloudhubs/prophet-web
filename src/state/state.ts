@@ -1,11 +1,11 @@
-import {RepoConfig} from "../data/RepoConfig";
-import {ProphetAppData} from "../data/ProphetAppData";
-import {ServerErrors} from "../data/ServerErrors";
-import {ProphetConfigs} from "../data/configuration/ProphetConfigs";
+import {RepoConfig} from "../model/RepoConfig";
+import {ProphetAppData} from "../model/ProphetAppData";
+import {ServerErrors} from "../model/ServerErrors";
+import {Prophet} from "../model/configuration/Prophet";
 
 
 export type State = {
-    prophetConfigs: ProphetConfigs;
+    prophetConfigs: Prophet;
     backendUrl: string;
     organization: string;
     repository: string;

@@ -1,4 +1,4 @@
-import {ProphetAppData} from "../data/ProphetAppData";
+import {ProphetAppData} from "../model/ProphetAppData";
 
 export type Action =
     | { type: "setGithubUrl", githubUrl: string }
