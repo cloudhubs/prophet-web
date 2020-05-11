@@ -11,7 +11,7 @@ import {useGlobalState} from "../state/appState";
 import DeleteIcon from '@material-ui/icons/Delete';
 import RepositoryForm from './RepositoryForm';
 import AddIcon from '@material-ui/icons/Add';
-import { RepoConfig } from '../data/RepoConfig';
+import { RepoConfig } from '../model/RepoConfig';
 import NavigationIcon from '@material-ui/icons/Navigation';
 import ConfigForm from "./configuration/ConfigForm";
 
