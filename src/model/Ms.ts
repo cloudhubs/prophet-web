@@ -1,4 +1,6 @@
 export class Ms {
-    name: string;
-    boundedContext: string;
+    name: string | null;
+    noBoundedContext: boolean;
+    notJava: boolean;
+    boundedContext: string | null;
 }
