@@ -1,5 +1,8 @@
 export class Global {
-    projectName: string;
-    communication: string;
-    contextMap: string;
+    projectName: string | null;
+    noCommunication: boolean;
+    communication: string | null;
+    noContextMap: boolean;
+    contextMap: string | null;
+    cannotClone: boolean;
 }
