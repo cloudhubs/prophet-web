@@ -1,6 +1,9 @@
 import React from "react";
 import {Global} from "../../model/Global";
 import {Mermaid} from "./Mermaid";
+import {Card} from '@material-ui/core';
+import { CardContent } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
 type Props = {
     global: Global;
@@ -16,13 +19,31 @@ const GlobalDiagrams = (props: Props) => {
 
     const communication = (
         <>
-            <Mermaid chart={props.global.communication}/>}
+            <Card style={{marginBottom: '20px'}}>
+                <CardContent >
+                    <Typography component="h4" variant="h4">
+                        Communication Diagram
+                    </Typography>
+                    <div style={{overflow: 'auto'}}>
+                        <Mermaid chart={props.global.communication}/>
+                    </div>
+                </CardContent>
+            </Card>
         </>
     );
 
     const contextMap = (
         <>
-            <Mermaid chart={props.global.contextMap}/>}
+            <Card style={{marginBottom: '20px'}}>
+                <CardContent>
+                    <Typography component="h4" variant="h4">
+                        Context Map
+                    </Typography>
+                    <div style={{overflow: 'auto'}}>
+                        <Mermaid chart={props.global.contextMap}/>
+                    </div>
+                </CardContent>
+            </Card>
         </>
     );
 
