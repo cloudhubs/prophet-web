@@ -1,4 +1,4 @@
-export class RepoConfig {
+export class Configuration {
     isMonolith: boolean;
     organization: string;
     repository: string;

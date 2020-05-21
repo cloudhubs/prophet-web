@@ -1,6 +1,11 @@
 import React, {useState} from "react";
 import {TextField} from "@material-ui/core";
 import ActionsRegister from "../../state/ActionsRegister";
+import {Repository} from "../../model/Repository";
+
+type ConfigProps = {
+    conf: Repository
+}
 
 /**
  * @author Jan Svacina
@@ -9,7 +14,7 @@ import ActionsRegister from "../../state/ActionsRegister";
  * @constructor
  * @description Gets Gihub URL from input
  */
-const ConfigForm = () => {
+const ConfigForm = (conf: ConfigProps) => {
 
     const [url, setUrl] = useState<string>("https://github.com/cloudhubs/tms");
 

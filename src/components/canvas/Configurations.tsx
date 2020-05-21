@@ -1,8 +1,7 @@
 import React from "react";
 import {useGlobalState} from "../../state/appState";
-import {RepoConfig} from "../../model/configuration/RepoConfig";
 import SingleConfig from "../configuration/SingleConfig";
-import {Ms} from "../../model/Ms";
+import {Repository} from "../../model/Repository";
 
 /**
  *
@@ -11,14 +10,16 @@ import {Ms} from "../../model/Ms";
  */
 const Configurations = () => {
 
-    const [ms] = useGlobalState('ms');
+    const [request] = useGlobalState('request');
 
     return (
         <React.Fragment>
-            {ms.map((m: Ms) => (
-                <React.Fragment>
-                    <SingleConfig conf={m}  />
-                </React.Fragment>
+            request
+            {request.systemName}
+            {request.repositories.map((m: Repository) => (
+                <>
+                    <SingleConfig conf={m}/>
+                </>
             ))}
         </React.Fragment>
     )
