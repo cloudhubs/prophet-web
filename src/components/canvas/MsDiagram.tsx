@@ -1,6 +1,9 @@
 import React from "react";
 import {Mermaid} from "./Mermaid";
 import {Ms} from "../../model/Ms";
+import {Card} from '@material-ui/core';
+import { CardContent } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
 type Props = {
     ms: Ms;
@@ -42,10 +45,18 @@ const MsDiagram = (props: Props) => {
 
     return (
         <React.Fragment>
-            {name}
-            {displayNotJava ? notJava : <></> }
-            {displayNoBoundedContext ? noBoundedContext : <></> }
-            {!props.ms.notJava && !props.ms.noBoundedContext && boundedContext}
+            <Card style={{marginBottom: '20px'}}>
+                <CardContent>
+                    <Typography component="h4" variant="h4">
+                        {name}
+                    </Typography>
+                    <div style={{overflow: 'auto'}}>
+                        {displayNotJava ? notJava : <></> }
+                        {displayNoBoundedContext ? noBoundedContext : <></> }
+                        {!props.ms.notJava && !props.ms.noBoundedContext && boundedContext}
+                    </div>
+                </CardContent>
+            </Card>
         </React.Fragment>
     )
 }
