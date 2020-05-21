@@ -6,6 +6,11 @@ type Props = {
     ms: Ms;
 }
 
+/**
+ * ToDo: Vincent, create frames for components, alignments, etc.
+ * @param props
+ * @constructor
+ */
 const MsDiagram = (props: Props) => {
 
     const displayNotJava = props.ms.notJava;
