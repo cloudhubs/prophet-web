@@ -6,6 +6,7 @@ import {Global} from "../model/Global";
 import {Ms} from "../model/Ms";
 
 export type State = {
+    githubUrl: string;
     global: Global;
     ms: Ms[];
     // prophetConfigs: Prophet;
