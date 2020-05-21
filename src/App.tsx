@@ -22,7 +22,7 @@ const App = () => {
         <div className={classes.root}>
             <CssBaseline />
             <ThemeProvider theme={prophetTheme}>
-                <Router history={history} basename={"/"} >
+                <Router history={history} basename={"/prophet"} >
                     <EffectsRegister />
                     <AppHeader/>
                     <div className={classes.content}>

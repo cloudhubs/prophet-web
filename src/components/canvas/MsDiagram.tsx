@@ -1,13 +1,15 @@
 import React from "react";
 import {Mermaid} from "./Mermaid";
 import {Ms} from "../../model/Ms";
-import {render} from "react-dom";
 
 type Props = {
     ms: Ms;
 }
 
 const MsDiagram = (props: Props) => {
+
+    const displayNotJava = props.ms.notJava;
+    const displayNoBoundedContext = props.ms.noBoundedContext;
 
     const name = (
       <>
@@ -29,15 +31,15 @@ const MsDiagram = (props: Props) => {
 
     const boundedContext = (
         <>
-            <Mermaid chart={props.ms.boundedContext}/>}
+            <Mermaid chart={props.ms.boundedContext}/>
         </>
     );
 
     return (
         <React.Fragment>
             {name}
-            {props.ms.notJava && !props.ms.noBoundedContext && {notJava} }
-            {!props.ms.notJava && props.ms.noBoundedContext && {noBoundedContext} }
+            {displayNotJava ? notJava : <></> }
+            {displayNoBoundedContext ? noBoundedContext : <></> }
             {!props.ms.notJava && !props.ms.noBoundedContext && boundedContext}
         </React.Fragment>
     )

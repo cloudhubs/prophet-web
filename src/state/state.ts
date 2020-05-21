@@ -1,28 +1,11 @@
-import {RepoConfig} from "../model/RepoConfig";
-import {ProphetAppData} from "../model/ProphetAppData";
-import {ServerErrors} from "../model/ServerErrors";
-import {Prophet} from "../model/configuration/Prophet";
 import {Global} from "../model/Global";
 import {Ms} from "../model/Ms";
+import {Request} from "../model/Request";
 
 export type State = {
     githubUrl: string;
     global: Global;
     ms: Ms[];
-    // prophetConfigs: Prophet;
-    // backendUrl: string;
-    // organization: string;
-    // repository: string;
-    // communicationGraph: string;
-    // prophetAppData: ProphetAppData;
-    // loading: boolean;
-    // ms: string;
-    // contextMap: boolean;
-    // communication: boolean;
-    // configMultiple: RepoConfig[];
-    // configSingle: {};
-    // isConfigSingle: boolean;
-    // analysisError: ServerErrors;
-    // githubUrl: string;
-
+    request: Request;
+    loading: boolean;
 }
