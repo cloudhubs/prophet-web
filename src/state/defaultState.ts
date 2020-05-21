@@ -40,6 +40,7 @@ import {MicroserviceData} from "../model/configuration/MicroserviceData";
 // }
 
 export const defaultState: State = {
+    "githubUrl":"https://",
     "global": {
         "projectName": "tms",
         "noCommunication": true,
