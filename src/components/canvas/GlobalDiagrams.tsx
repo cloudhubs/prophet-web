@@ -10,6 +10,7 @@ type Props = {
 }
 
 /**
+ * ToDo: Vincent, create frames for components, alignments, etc.
  * Displays communication and context map diagrams if present
  * otherwise display error notification
  * @param props: Global object from state
