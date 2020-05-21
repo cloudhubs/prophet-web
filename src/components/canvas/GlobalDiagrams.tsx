@@ -1,6 +1,6 @@
 import React from "react";
 import {Global} from "../../model/Global";
-import {Mermaid} from "../Mermaid";
+import {Mermaid} from "./Mermaid";
 
 type Props = {
     global: Global;

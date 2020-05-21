@@ -1,9 +1,9 @@
 import React from "react";
 import ConfigForm from "./ConfigForm";
-import {RepoConfig} from "../../model/configuration/RepoConfig";
+import {Ms} from "../../model/Ms";
 
 type ConfigProps = {
-    conf: RepoConfig
+    conf: Ms
 }
 /**
  * Represents Configurations of a specific github repository
@@ -31,9 +31,9 @@ const SingleConfig = ({conf}: ConfigProps) => {
 
     const errorCodes = (
         <>
-            {conf.analysisErrors.errors.map(err => {
-                //input error to component
-            })}
+            {/*{conf.analysisErrors.errors.map(err => {*/}
+            {/*    //input error to component*/}
+            {/*})}*/}
         </>
     )
 

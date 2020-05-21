@@ -2,6 +2,7 @@ import React from "react";
 import {useGlobalState} from "../../state/appState";
 import {RepoConfig} from "../../model/configuration/RepoConfig";
 import SingleConfig from "../configuration/SingleConfig";
+import {Ms} from "../../model/Ms";
 
 /**
  *
@@ -10,13 +11,13 @@ import SingleConfig from "../configuration/SingleConfig";
  */
 const Configurations = () => {
 
-    const [prophetConfigs] = useGlobalState('prophetConfigs');
+    const [ms] = useGlobalState('ms');
 
     return (
         <React.Fragment>
-            {prophetConfigs.repoConfigurations.map((config: RepoConfig) => (
+            {ms.map((m: Ms) => (
                 <React.Fragment>
-                    <SingleConfig conf={config}  />
+                    <SingleConfig conf={m}  />
                 </React.Fragment>
             ))}
         </React.Fragment>
