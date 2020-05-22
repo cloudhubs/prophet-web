@@ -60,8 +60,6 @@ const ConfigForm = (conf: ConfigProps) => {
                     helperText={isError() && <p>Failed to clone this repository!</p>}
                 />
 
-                {/* {isError() && <p>Error Message</p>} */}
-
                 <Button variant="contained" color="primary" type="submit">
                     Submit
                 </Button>
