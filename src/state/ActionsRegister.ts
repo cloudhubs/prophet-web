@@ -7,7 +7,9 @@ const ActionsRegister = {
             githubUrl: githubUrl,
             type: 'setGithubUrl',
         })
-    }
+    },
+
+
 }
 
 export default ActionsRegister;

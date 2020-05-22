@@ -19,7 +19,7 @@ type ConfigProps = {
  */
 const ConfigForm = (conf: ConfigProps) => {
 
-    const [url, setUrl] = useState<string>("/FudanSELab/train-ticket");
+    const [url, setUrl] = useState<string>("FudanSELab/train-ticket");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUrl(e.target.value);
@@ -37,7 +37,7 @@ const ConfigForm = (conf: ConfigProps) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(url);
-        await DoAnalyze.get();
+        await DoAnalyze.get(url);
     }
 
     return (
