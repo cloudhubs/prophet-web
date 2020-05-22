@@ -26,6 +26,14 @@ const ConfigForm = (conf: ConfigProps) => {
         ActionsRegister.setGithubUrl(url);
     }
 
+    /**
+     * Stub function, should be replaced somewhere by an error check
+     * @param u
+     */
+    const isError = (): boolean => {
+        return false;
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(url);
@@ -37,9 +45,11 @@ const ConfigForm = (conf: ConfigProps) => {
             <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                 <TextField
                     id="github-url"
+                    error={isError()}
+                    label="Repository URL (GitHub /organization/repository)"
                     type="text"
                     style={{ margin: 8 }}
-                    placeholder="Github URL here"
+                    placeholder="GitHub URL here"
                     fullWidth
                     margin="normal"
                     InputLabelProps={{
@@ -47,9 +57,10 @@ const ConfigForm = (conf: ConfigProps) => {
                     }}
                     value={url}
                     onChange={handleChange}
+                    helperText={isError() && <p>Failed to clone this repository!</p>}
                 />
 
-                <p>Error Message</p>
+                {/* {isError() && <p>Error Message</p>} */}
 
                 <Button variant="contained" color="primary" type="submit">
                     Submit
