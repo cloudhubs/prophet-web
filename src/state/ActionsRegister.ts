@@ -1,4 +1,6 @@
 import {dispatch} from "./appState";
+import {Global} from "../model/Global";
+import {Ms} from "../model/Ms";
 
 const ActionsRegister = {
 
@@ -7,7 +9,27 @@ const ActionsRegister = {
             githubUrl: githubUrl,
             type: 'setGithubUrl',
         })
-    }
+    },
+    setProphetResponse(global: Global, ms: Ms[]) {
+        dispatch({
+            global: global,
+            type: 'setGlobal',
+        });
+        dispatch({
+            ms: ms,
+            type: 'setMs',
+        });
+    },
+    startLoading() {
+        dispatch({
+            type: 'startLoading',
+        })
+    },
+    stopLoading() {
+        dispatch({
+            type: 'stopLoading',
+        })
+    },
 }
 
 export default ActionsRegister;

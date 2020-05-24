@@ -11,7 +11,6 @@ const MainCanvas = () => {
 
     return (
         <React.Fragment>
-            Main
             <Configurations />
             <Diagrams/>
         </React.Fragment>

@@ -9,6 +9,26 @@ export const reducer = (state = initialState, action: Action) => {
                 ...state,
                 githubUrl: action.githubUrl
             }
+        case "setGlobal":
+            return {
+                ...state,
+                global: action.global
+            }
+        case "setMs":
+            return {
+                ...state,
+                ms: action.ms
+            }
+        case "startLoading":
+            return {
+                ...state,
+                loading: true
+            }
+        case "stopLoading":
+            return {
+                ...state,
+                loading: false
+            }
         default:
             return state;
     }

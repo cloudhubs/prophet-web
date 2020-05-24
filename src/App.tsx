@@ -14,6 +14,7 @@ import EffectsRegister from "./state/EffectsRegister";
 import MainCanvas from "./components/main/MainCanvas";
 import AppFooter from "./components/main/AppFooter";
 import AppHeader from "./components/main/AppHeader";
+import LoadingIndicator from "./shared/LoadingIndicator";
 
 const App = () => {
     const history = createBrowserHistory();
@@ -24,6 +25,7 @@ const App = () => {
             <ThemeProvider theme={prophetTheme}>
                 <Router history={history} basename={"/prophet"} >
                     <EffectsRegister />
+                    <LoadingIndicator />
                     <AppHeader/>
                     <div className={classes.content}>
                         <MainCanvas />
