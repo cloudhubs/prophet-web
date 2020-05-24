@@ -2,6 +2,9 @@ import {Global} from "../model/Global";
 import {Ms} from "../model/Ms";
 import {Request} from "../model/Request";
 
+/**
+ * Global Application State
+ */
 export type State = {
     githubUrl: string;
     global: Global;

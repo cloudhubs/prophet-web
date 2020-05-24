@@ -1,7 +1,11 @@
 import {Action} from "./action";
 import {initialState} from "./initState";
 
-
+/**
+ * Prophet Web App Reducers
+ * @param state: Initial state or current state
+ * @param action: Given action
+ */
 export const reducer = (state = initialState, action: Action) => {
     switch (action.type) {
         case "setGithubUrl":
@@ -10,7 +14,6 @@ export const reducer = (state = initialState, action: Action) => {
                 githubUrl: action.githubUrl
             }
         case "setGlobal":
-            console.log(action.global);
             return {
                 ...state,
                 global: action.global

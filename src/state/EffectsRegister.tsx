@@ -5,7 +5,8 @@ const EffectsRegister = () => {
     const [global] = useGlobalState('global');
     useEffect(
         () => {
-            console.log(global);
+
+
         },
         [global],
     );
