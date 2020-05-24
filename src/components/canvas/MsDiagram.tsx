@@ -4,9 +4,16 @@ import {Ms} from "../../model/Ms";
 import {Card} from '@material-ui/core';
 import { CardContent } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
+// import mermaid from "mermaid";
+//
+// mermaid.initialize({
+//     startOnLoad: true,
+//
+// });
 
 type Props = {
     ms: Ms;
+    index: number;
 }
 
 /**
@@ -16,6 +23,7 @@ type Props = {
  */
 const MsDiagram = (props: Props) => {
 
+    console.log(props.ms.name+" created");
     const displayNotJava = props.ms.notJava;
     const displayNoBoundedContext = props.ms.noBoundedContext;
 
@@ -39,7 +47,9 @@ const MsDiagram = (props: Props) => {
 
     const boundedContext = (
         <>
-            <Mermaid chart={props.ms.boundedContext}/>
+
+            {/*<div className="mermaid">{props.ms.boundedContext}</div>*/}
+            <Mermaid chart={props.ms.boundedContext} index={props.index}/>
         </>
     );
 

@@ -26,7 +26,7 @@ const GlobalDiagrams = (props: Props) => {
                         Communication Diagram
                     </Typography>
                     <div style={{overflow: 'auto'}}>
-                        <Mermaid chart={props.global.communication}/>
+                        <Mermaid chart={props.global.communication} index={0}/>
                     </div>
                 </CardContent>
             </Card>
@@ -41,7 +41,7 @@ const GlobalDiagrams = (props: Props) => {
                         Context Map
                     </Typography>
                     <div style={{overflow: 'auto'}}>
-                        <Mermaid chart={props.global.contextMap}/>
+                        <Mermaid chart={props.global.contextMap} index={1}/>
                     </div>
                 </CardContent>
             </Card>

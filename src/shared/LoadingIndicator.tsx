@@ -6,13 +6,12 @@ import prophetStyles from "../prophetStyles";
 
 const LoadingIndicator = () => {
 
-    // const [loading] = useGlobalState('loading');
-    const loading = true;
+    const [loading] = useGlobalState('loading');
     const classes = prophetStyles();
 
     return (
         <React.Fragment>
-            <LoadingOverlay
+            {loading && <LoadingOverlay
                 active={loading}
                 spinner
                 className={classes.overlay}
@@ -20,7 +19,7 @@ const LoadingIndicator = () => {
                 <p>
 
                 </p>
-            </LoadingOverlay>
+            </LoadingOverlay> }
         </React.Fragment>
     )
 }

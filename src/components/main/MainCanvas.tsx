@@ -16,4 +16,5 @@ const MainCanvas = () => {
         </React.Fragment>
     )
 }
+
 export default MainCanvas;
