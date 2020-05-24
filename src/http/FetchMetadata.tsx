@@ -45,10 +45,12 @@ const FetchMetadata = {
             }
         });
         if (response != null){
-            const body = await response.json();
-            //ToDo: trigger action
+            if (!response.ok) {
+                return null;
+            }
+            return await response.json();
         } else {
-            console.log("server error");
+            return null;
         }
     }
 

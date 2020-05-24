@@ -1,6 +1,8 @@
 import React from "react";
 import ConfigForm from "./ConfigForm";
 import {Repository} from "../../model/Repository";
+import {Link} from "@material-ui/core";
+import {useGlobalState} from "../../state/appState";
 
 type ConfigProps = {
     conf: Repository
@@ -17,11 +19,17 @@ type ConfigProps = {
  */
 const SingleConfig = ({conf}: ConfigProps) => {
 
-    const header = (
-        <>
+    const [_, setUrl] = useGlobalState('githubUrl');
 
-        </>
-    );
+    const setTms = (e) => {
+        e.preventDefault();
+        setUrl("cloudhubs/tms")
+    }
+
+    const setTicket = (e) => {
+        e.preventDefault();
+        setUrl("FudanSELab/train-ticket")
+    }
 
     const githubUrlInput = (
         <>
@@ -29,21 +37,22 @@ const SingleConfig = ({conf}: ConfigProps) => {
         </>
     )
 
-    const errorCodes = (
-        <>
-
-        </>
-    )
-
     const footer = (
         <>
+            <span>Example: </span>
 
+            <Link href="#" onClick={setTms}>
+                cloudhubs/tms
+            </Link>
+
+            <span>, </span>
+            <Link href="#" onClick={setTicket}>
+                FudanSELab/train-ticket
+            </Link>
         </>
     );
-
     return (
         <React.Fragment>
-            {header}
             {githubUrlInput}
             {footer}
         </React.Fragment>

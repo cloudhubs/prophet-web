@@ -36,8 +36,19 @@ const prophetStyles = makeStyles({
         padding: '12px 30px',
     },
     appBar: {
-        backgroundColor: theme.palette.primary.main
+        backgroundColor: theme.palette.primary.main,
+        zIndex:1
     },
+    overlay: {
+        position: 'fixed',
+        width: '100%',
+        height: '100%',
+        background: 'rgba(0,0,0,0.3)',
+        display: 'flexbox',
+        flexAlign: 'center',
+        flexPack: 'center',
+        zIndex:2
+    }
 
 });
 

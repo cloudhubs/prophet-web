@@ -1,3 +1,6 @@
+/**
+ * Detailed server error
+ */
 export class ErrorItem {
     code: string;
     initialized: boolean = false;

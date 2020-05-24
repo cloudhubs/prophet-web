@@ -2,19 +2,20 @@ import React, { useEffect } from 'react';
 import { dispatch, useGlobalState } from './appState';
 
 const EffectsRegister = () => {
-    const [githubUrl] = useGlobalState('githubUrl');
-
+    const [global] = useGlobalState('global');
     useEffect(
         () => {
-            console.log(githubUrl);
-            //parse repository (sets repository or error)
-            //parse organization (sets organization or error)
+
+
         },
-        [githubUrl],
+        [global],
     );
+
     return(
         <></>
     );
 }
 
 export default EffectsRegister;
+
+
