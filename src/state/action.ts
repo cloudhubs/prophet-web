@@ -1,4 +1,3 @@
-import {ProphetAppData} from "../model/ProphetAppData";
 import {Ms} from "../model/Ms";
 import {Global} from "../model/Global";
 
@@ -9,5 +8,4 @@ export type Action =
     | { type: "startLoading"}
     | { type: "stopLoading"}
     | { type: "hideGitError"}
-    | { type: "showGitError"}
-    | { type: "setProphetAppData", currentUser: ProphetAppData };
+    | { type: "showGitError"};

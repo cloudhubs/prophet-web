@@ -27,11 +27,6 @@ const Configurations = () => {
                             <SingleConfig conf={m}/>
                         </>
                     ))}
-                    {/*{request.systemName && request.systemName.length > 0 &&*/}
-                    {/*    <Typography component="h5" variant="h5" style={{marginTop:'15px'}}>*/}
-                    {/*        Project: {request.systemName}*/}
-                    {/*    </Typography>*/}
-                    {/*}*/}
                 </CardContent>
             </Card>
         </React.Fragment>

@@ -51,10 +51,6 @@ const SingleConfig = ({conf}: ConfigProps) => {
             </Link>
         </>
     );
-
-
-
-
     return (
         <React.Fragment>
             {githubUrlInput}

@@ -23,7 +23,6 @@ type Props = {
  */
 const MsDiagram = (props: Props) => {
 
-    console.log(props.ms.name+" created");
     const displayNotJava = props.ms.notJava;
     const displayNoBoundedContext = props.ms.noBoundedContext;
 
@@ -35,20 +34,25 @@ const MsDiagram = (props: Props) => {
 
     const notJava = (
         <>
-            {'Microservice does not support Spring Annotations, more:'}
+            <p>
+                {'Microservice does not support Spring Annotations, more: '}
+                <a href="https://github.com/cloudhubs/prophet-web/wiki/Prophet-Language-Support" target="_blank">Prophet-Language-Support</a>
+            </p>
+
         </>
     )
 
     const noBoundedContext = (
         <>
-            {'Microservice does not have model, more: '}
+            <p>
+                {'Microservice does not have model, more: '}
+                <a href="https://github.com/cloudhubs/prophet-web/wiki/Prophet-Data-Model-Support" target="_blank">Prophet-Data-Model-Support</a>
+            </p>
         </>
     )
 
     const boundedContext = (
         <>
-
-            {/*<div className="mermaid">{props.ms.boundedContext}</div>*/}
             <Mermaid chart={props.ms.boundedContext} index={props.index}/>
         </>
     );
