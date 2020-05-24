@@ -8,4 +8,6 @@ export type Action =
     | { type: "setMs", ms: Ms[] }
     | { type: "startLoading"}
     | { type: "stopLoading"}
+    | { type: "hideGitError"}
+    | { type: "showGitError"}
     | { type: "setProphetAppData", currentUser: ProphetAppData };

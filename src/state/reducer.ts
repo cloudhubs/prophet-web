@@ -10,7 +10,6 @@ export const reducer = (state = initialState, action: Action) => {
                 githubUrl: action.githubUrl
             }
         case "setGlobal":
-            console.log("setting gloval");
             console.log(action.global);
             return {
                 ...state,
@@ -30,6 +29,16 @@ export const reducer = (state = initialState, action: Action) => {
             return {
                 ...state,
                 loading: false
+            }
+        case "showGitError":
+            return {
+                ...state,
+                gitError: true
+            }
+        case "hideGitError":
+            return {
+                ...state,
+                gitError: false
             }
         default:
             return state;

@@ -1,7 +1,8 @@
 import {State} from "./state";
 
 export const defaultState: State = {
-    "githubUrl":"https://",
+    gitError: false,
+    "githubUrl":"FudanSELab/train-ticket",
     loading: false,
     "request": {
         "repositories": [

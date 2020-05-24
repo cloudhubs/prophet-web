@@ -3,7 +3,6 @@ import {Global} from "../model/Global";
 import {Ms} from "../model/Ms";
 
 const ActionsRegister = {
-
     setGithubUrl(githubUrl: string) {
         dispatch({
             githubUrl: githubUrl,
@@ -28,6 +27,16 @@ const ActionsRegister = {
     stopLoading() {
         dispatch({
             type: 'stopLoading',
+        })
+    },
+    hideGitError() {
+        dispatch({
+            type: 'hideGitError',
+        })
+    },
+    showGitError() {
+        dispatch({
+            type: 'showGitError',
         })
     },
 }
