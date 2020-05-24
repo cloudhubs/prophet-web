@@ -36,7 +36,6 @@ const ConfigForm = (conf: ConfigProps) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(url);
         await DoAnalyze.get(url);
     }
 

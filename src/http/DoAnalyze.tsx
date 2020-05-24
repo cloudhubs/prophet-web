@@ -1,5 +1,8 @@
+import ActionsRegister from "../state/ActionsRegister";
+
 const DoAnalyze = {
     async get(path: string) {
+        ActionsRegister.startLoading();
         const response = await fetch( 'http://127.0.0.1:8081/', {
         // const response = await fetch( 'https://cloudhubs.ecs.baylor.edu/prophet/utils', {
             method: 'POST',
@@ -20,12 +23,15 @@ const DoAnalyze = {
 
         if (response != null){
             const body = await response.json();
-            console.log(body);
+            ActionsRegister.setProphetResponse(body.global, body.ms);
+            ActionsRegister.stopLoading();
             return body;
         } else {
             console.log("server error");
+            ActionsRegister.stopLoading();
             return [];
         }
+
     },
 }
 
