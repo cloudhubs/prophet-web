@@ -24,8 +24,6 @@ const AppFooter = () => {
     return (
         <React.Fragment>
             <BottomNavigation value={value} onChange={handleChange}>
-                Footer
-                Footer
                 {/*<BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />*/}
                 {/*<BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />*/}
                 {/*<BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />*/}
