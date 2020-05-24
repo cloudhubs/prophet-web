@@ -1,4 +1,5 @@
 import ActionsRegister from "../state/ActionsRegister";
+import * as React from "react";
 
 const DoAnalyze = {
     async get(path: string) {
@@ -24,6 +25,7 @@ const DoAnalyze = {
         if (response != null){
             const body = await response.json();
             ActionsRegister.setProphetResponse(body.global, body.ms);
+            setTimeout(() => {}, 3000);
             ActionsRegister.stopLoading();
             return body;
         } else {

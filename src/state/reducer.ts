@@ -10,6 +10,8 @@ export const reducer = (state = initialState, action: Action) => {
                 githubUrl: action.githubUrl
             }
         case "setGlobal":
+            console.log("setting gloval");
+            console.log(action.global);
             return {
                 ...state,
                 global: action.global

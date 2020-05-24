@@ -16,11 +16,11 @@ const Diagrams = () => {
 
     const [global] = useGlobalState('global');
     const [ms] = useGlobalState('ms');
-    //ToDo: loading
+
     return (
         <React.Fragment>
             <GlobalDiagrams global={global}/>
-            {ms.map((m: Ms) => (<MsDiagram ms={m}/>))}
+            {ms.map((m: Ms, i: number) => (<MsDiagram ms={m} index={i+2}/>))}
         </React.Fragment>
     )
 }
