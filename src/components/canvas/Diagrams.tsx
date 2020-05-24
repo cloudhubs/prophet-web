@@ -16,11 +16,17 @@ const Diagrams = () => {
 
     const [global] = useGlobalState('global');
     const [ms] = useGlobalState('ms');
+    const [gitError] = useGlobalState('gitError');
 
     return (
         <React.Fragment>
-            <GlobalDiagrams global={global}/>
-            {ms.map((m: Ms, i: number) => (<MsDiagram ms={m} index={i+2}/>))}
+            {!gitError &&
+                <>
+                    <GlobalDiagrams global={global}/>
+                    {ms.map((m: Ms, i: number) => (<MsDiagram ms={m} index={i+2}/>))}
+                </>
+            }
+
         </React.Fragment>
     )
 }

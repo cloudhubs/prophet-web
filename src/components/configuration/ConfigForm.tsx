@@ -1,10 +1,11 @@
 import React, {useState} from "react";
-import {TextField} from "@material-ui/core";
+import {Box, TextField} from "@material-ui/core";
 import ActionsRegister from "../../state/ActionsRegister";
 import {Repository} from "../../model/Repository";
 import Button from "@material-ui/core/Button";
 import FetchMetadata from "../../http/FetchMetadata";
 import DoAnalyze from "../../http/DoAnalyze";
+import {useGlobalState} from "../../state/appState";
 
 type ConfigProps = {
     conf: Repository
@@ -19,11 +20,12 @@ type ConfigProps = {
  */
 const ConfigForm = (conf: ConfigProps) => {
 
-    const [url, setUrl] = useState<string>("FudanSELab/train-ticket");
+    const [url, setUrl] = useGlobalState('githubUrl');
+    const [gitError] = useGlobalState('gitError');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUrl(e.target.value);
-        ActionsRegister.setGithubUrl(url);
+        //ActionsRegister.setGithubUrl(url);
     }
 
     /**
@@ -40,7 +42,7 @@ const ConfigForm = (conf: ConfigProps) => {
     }
 
     return (
-        <React.Fragment>
+        <Box m={1}>
             <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                 <TextField
                     id="github-url"
@@ -56,14 +58,14 @@ const ConfigForm = (conf: ConfigProps) => {
                     }}
                     value={url}
                     onChange={handleChange}
-                    helperText={isError() && <p>Failed to clone this repository!</p>}
+                    helperText={gitError && <p>Repository does not exist!</p>}
                 />
 
                 <Button variant="contained" color="primary" type="submit">
-                    Submit
+                    Analyze
                 </Button>
             </form>
-        </React.Fragment>
+        </Box>
     )
 }
 export default ConfigForm;

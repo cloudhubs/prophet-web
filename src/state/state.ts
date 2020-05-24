@@ -8,4 +8,5 @@ export type State = {
     ms: Ms[];
     request: Request;
     loading: boolean;
+    gitError: boolean;
 }

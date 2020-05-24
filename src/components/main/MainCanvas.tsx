@@ -1,6 +1,7 @@
 import React from "react";
 import Configurations from "../canvas/Configurations";
 import Diagrams from "../canvas/Diagrams";
+import {Box} from "@material-ui/core";
 
 /**
  *
@@ -11,8 +12,11 @@ const MainCanvas = () => {
 
     return (
         <React.Fragment>
-            <Configurations />
-            <Diagrams/>
+            <Box m={2}>
+                <Configurations />
+                <Diagrams/>
+            </Box>
+
         </React.Fragment>
     )
 }
