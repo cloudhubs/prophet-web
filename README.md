@@ -18,4 +18,5 @@ npm run build # Builds the app for production to the build folder.
 ```
 
 ## Libraries
+* [ProjectStorm Diagrams](https://github.com/projectstorm/react-diagrams)
 * [MermaidJS Graph Library](https://mermaid-js.github.io/mermaid/#/)
