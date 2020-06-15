@@ -1,4 +1,7 @@
-#Prophet Web
+# Prophet Web
+
+User interface in ReactJS with Typescript that displays a communication diagram, context map
+and bounded contexts of the microservice mesh. 
 
 ## 0.1.0
 * single repository analysis
