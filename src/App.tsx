@@ -15,27 +15,34 @@ import MainCanvas from "./components/main/MainCanvas";
 import AppFooter from "./components/main/AppFooter";
 import AppHeader from "./components/main/AppHeader";
 import LoadingIndicator from "./shared/LoadingIndicator";
+import GraphWidget from "./components/graphs/GraphWidget";
+import {Box} from "@material-ui/core";
 
 const App = () => {
     const history = createBrowserHistory();
     const classes = prophetStyles();
     return (
-        <div className={classes.root}>
-            <CssBaseline />
-            <ThemeProvider theme={prophetTheme}>
-                <Router history={history} basename={"/prophet"} >
-                    <EffectsRegister />
-                    <LoadingIndicator />
-                    <AppHeader/>
-                    <div className={classes.content}>
-                        <MainCanvas />
-                    </div>
-                    <div className={classes.footer}>
-                        <AppFooter />
-                    </div>
-                </Router>
-            </ThemeProvider>
+        <div>
+            <GraphWidget />
         </div>
+        // <div className={classes.root}>
+        //     <CssBaseline />
+        //     <ThemeProvider theme={prophetTheme}>
+        //         <Router history={history} basename={"/prophet"} >
+        //             <EffectsRegister />
+        //             <LoadingIndicator />
+        //             <AppHeader/>
+        //             <div className={classes.content}>
+        //                 {/*<MainCanvas />*/}
+        //                 <GraphWidget />
+        //
+        //             </div>
+        //             <div className={classes.footer}>
+        //                 <AppFooter />
+        //             </div>
+        //         </Router>
+        //     </ThemeProvider>
+        // </div>
     );
 }
 

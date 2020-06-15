@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+.srd-diagram {
+  height: 100vh;
+}
+
+.srd-demo-canvas {
+  height: 100vh;
+}
+
+.srd-demo-canvas {
+  height: 100vh;
+  background-color: rgb(60,60,60)
+}
+
+html, body, #application{
+  height: 100%;
+  overflow: hidden;
+}

@@ -9,9 +9,9 @@ const theme = prophetTheme;
  */
 const prophetStyles = makeStyles({
     root: {
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
+        // display: 'flex',
+        // flexDirection: 'column',
+        // minHeight: '100vh',
     },
     main: {
         marginTop: theme.spacing(8),
@@ -40,14 +40,14 @@ const prophetStyles = makeStyles({
         zIndex:1
     },
     overlay: {
-        position: 'fixed',
-        width: '100%',
-        height: '100%',
-        background: 'rgba(0,0,0,0.3)',
-        display: 'flexbox',
-        flexAlign: 'center',
-        flexPack: 'center',
-        zIndex:2
+        // position: 'fixed',
+        // width: '100%',
+        // height: '100%',
+        // background: 'rgba(0,0,0,0.3)',
+        // display: 'flexbox',
+        // flexAlign: 'center',
+        // flexPack: 'center',
+        // zIndex:2
     }
 
 });
