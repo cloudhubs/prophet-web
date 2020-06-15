@@ -1,5 +1,10 @@
 #Prophet Web
-version: 0.0.8-dev
+
+## 0.1.0
+* single repository analysis
+* communication diagram
+* domain model diagram
+* mermaidJS
 
 ## Available Scripts
 
