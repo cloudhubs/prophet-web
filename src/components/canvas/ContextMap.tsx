@@ -10,28 +10,12 @@ type Props = {
 }
 
 /**
- * ToDo: Vincent, create frames for components, alignments, etc.
  * Displays communication and context map diagrams if present
  * otherwise display error notification
  * @param props: Global object from state
  * @stateless
  */
-const GlobalDiagrams = (props: Props) => {
-
-    const communication = (
-        <>
-            <Card style={{marginBottom: '20px'}}>
-                <CardContent >
-                    <Typography component="h4" variant="h4">
-                        Communication Diagram
-                    </Typography>
-                    <div style={{overflow: 'auto'}}>
-                        <Mermaid chart={props.global.communication} index={0}/>
-                    </div>
-                </CardContent>
-            </Card>
-        </>
-    );
+const ContextMap = (props: Props) => {
 
     const contextMap = (
         <>
@@ -50,9 +34,8 @@ const GlobalDiagrams = (props: Props) => {
 
     return (
         <React.Fragment>
-            {communication}
             {contextMap}
         </React.Fragment>
     )
 }
-export default GlobalDiagrams;
+export default ContextMap;

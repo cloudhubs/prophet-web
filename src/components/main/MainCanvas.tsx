@@ -2,6 +2,7 @@ import React from "react";
 import Configurations from "../canvas/Configurations";
 import Diagrams from "../canvas/Diagrams";
 import {Box} from "@material-ui/core";
+import TabsLayout from "../canvas/TabsLayout";
 
 /**
  *
@@ -14,7 +15,7 @@ const MainCanvas = () => {
         <React.Fragment>
             <Box m={2}>
                 <Configurations />
-                <Diagrams/>
+                <TabsLayout />
             </Box>
 
         </React.Fragment>

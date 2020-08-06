@@ -1,6 +1,6 @@
 import React from "react";
 import {useGlobalState} from "../../state/appState";
-import GlobalDiagrams from "./GlobalDiagrams";
+import ContextMap from "./ContextMap";
 import MsDiagram from "./MsDiagram";
 import {Ms} from "../../model/Ms";
 
@@ -22,7 +22,7 @@ const Diagrams = () => {
         <React.Fragment>
             {!gitError &&
                 <>
-                    <GlobalDiagrams global={global}/>
+                    <ContextMap global={global}/>
                     {ms.map((m: Ms, i: number) => (<MsDiagram ms={m} index={i+2}/>))}
                 </>
             }
