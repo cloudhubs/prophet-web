@@ -1,8 +1,8 @@
 import React from "react";
 import Configurations from "../canvas/Configurations";
-import Diagrams from "../canvas/Diagrams";
+import Diagrams from "../canvas/tabs/Diagrams";
 import {Box} from "@material-ui/core";
-import TabsLayout from "../canvas/TabsLayout";
+import TabsLayout from "../canvas/tabs/TabsLayout";
 
 /**
  *

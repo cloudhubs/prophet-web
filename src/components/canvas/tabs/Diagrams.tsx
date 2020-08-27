@@ -1,8 +1,8 @@
 import React from "react";
-import {useGlobalState} from "../../state/appState";
+import {useGlobalState} from "../../../state/appState";
 import ContextMap from "./ContextMap";
-import MsDiagram from "./MsDiagram";
-import {Ms} from "../../model/Ms";
+import MsDiagram from "../MsDiagram";
+import {Ms} from "../../../model/Ms";
 
 /**
  * Passes global and microservice variables from state to stateless

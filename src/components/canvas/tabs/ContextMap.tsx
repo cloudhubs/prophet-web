@@ -1,6 +1,6 @@
 import React from "react";
-import {Global} from "../../model/Global";
-import {Mermaid} from "./Mermaid";
+import {Global} from "../../../model/Global";
+import {Mermaid} from "../Mermaid";
 import {Card} from '@material-ui/core';
 import { CardContent } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';

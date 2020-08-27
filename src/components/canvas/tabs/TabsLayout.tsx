@@ -9,7 +9,7 @@ import Box from '@material-ui/core/Box';
 import {Card} from "@material-ui/core";
 import Diagrams from "./Diagrams";
 import Communication from "./Communication";
-import {useGlobalState} from "../../state/appState";
+import {useGlobalState} from "../../../state/appState";
 
 interface TabPanelProps {
     children?: React.ReactNode;
