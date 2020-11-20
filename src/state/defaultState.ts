@@ -1,9 +1,9 @@
 import {State} from "./state";
 
 export const defaultState: State = {
-    gitError: false,
+    "gitError": false,
     "githubUrl":"FudanSELab/train-ticket",
-    loading: false,
+    "loading": false,
     "request": {
         "repositories": [
             {
