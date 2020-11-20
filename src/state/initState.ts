@@ -1,7 +1,7 @@
 import {State} from "./state";
 import {defaultState} from "./defaultState";
 
-export const LOCAL_STORAGE_KEY = "prophetAppKey";
+export const LOCAL_STORAGE_KEY = "prophetkey2020";
 export const parseState = (str: string | null): State | null => {
     try {
         const state = JSON.parse(str || "");
