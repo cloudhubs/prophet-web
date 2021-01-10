@@ -19,6 +19,7 @@
     "axios": "^0.19.2",
     "mermaid": "^8.4.5",
     "react": "^16.12.0",
+    "react-code-blocks": "^0.0.8",
     "react-dom": "^16.12.0",
     "react-graph-vis": "^1.0.5",
     "react-hooks-global-state": "latest",
@@ -50,6 +51,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {}
+  }
 }
