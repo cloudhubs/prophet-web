@@ -48,6 +48,21 @@ const prophetStyles = makeStyles({
         flexAlign: 'center',
         flexPack: 'center',
         zIndex:2
+    },
+    boxes_root: {
+        flexGrow: 1,
+        margin: theme.spacing(2),
+    },
+    boxes_paper: {
+        padding: theme.spacing(2),
+        marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(2),
+    },
+    inconsistency_box: {
+        margin: theme.spacing(2),
+    },
+    entity_item: {
+        padding: theme.spacing(2)
     }
 
 });

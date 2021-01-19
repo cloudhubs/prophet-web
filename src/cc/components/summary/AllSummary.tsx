@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ModulesOverview from "./ModulesOverview";
+import CodeSnippet from "../../utils/CodeSnippet";
 
 type Props = {
     metadata: any;
@@ -19,6 +20,8 @@ const AllSummary = (props: Props) => {
     return (
         <React.Fragment>
             {/*{<PrettyPrintJson data={props.metadata.modules} />}*/}
+
+
             <TableContainer component={Paper}>
                 <Table aria-label="simple table">
                     <TableHead>
