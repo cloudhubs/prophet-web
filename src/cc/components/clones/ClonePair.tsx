@@ -46,7 +46,7 @@ const ClonePair = (props: Props) => {
                                 aria-controls="panel1a-content"
                                 id="panel1a-header">
                                 <Typography>
-                                    <b>{props.clonePair.typeA && "A"}</b> <b>{props.clonePair.typeB && "B"}</b> {props.clonePair.a.msController.packageName}.{props.clonePair.a.msController.className} -> {props.clonePair.b.msController.packageName}.{props.clonePair.b.msController.className}
+                                    <b>{props.clonePair.typeA && "A"}</b> <b>{props.clonePair.typeB && "B"}</b> <b>{props.clonePair.id}</b> {props.clonePair.a.msController.packageName}.{props.clonePair.a.msController.className} -> {props.clonePair.b.msController.packageName}.{props.clonePair.b.msController.className}
                                 </Typography>
 
                             </AccordionSummary>

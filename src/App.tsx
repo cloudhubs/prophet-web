@@ -1,6 +1,6 @@
 import * as React from 'react';
 // import './App.css';
-import {HashRouter as Router, Route} from "react-router-dom"
+import {HashRouter as Router, Route, Switch} from "react-router-dom"
 import {withRoot} from "./withRoot";
 import { createBrowserHistory } from 'history';
 // theme
@@ -17,17 +17,23 @@ import AppHeader from "./components/main/AppHeader";
 import LoadingIndicator from "./shared/LoadingIndicator";
 import CCApp from './cc/CCApp';
 import ProphetApp from "./ProphetApp";
+import Tms2020 from "./cc/Tms2020";
 
 const App = () => {
-    const history = createBrowserHistory();
     const classes = prophetStyles();
+    const history = createBrowserHistory();
+
     return (
         <div className={classes.root}>
             <CssBaseline />
+            <AppHeader/>
             <ThemeProvider theme={prophetTheme}>
                 <Router history={history} basename={"/"} >
-                    <Route exact path="/hello" component={CCApp} />
-                    <Route exact path="/" component={ProphetApp} />
+                    <Switch>
+                        <Route exact path="/train-ticket" component={CCApp} />
+                        <Route exact path="/tms2020" component={Tms2020} />
+                        <Route exact path="/" component={ProphetApp} />
+                    </Switch>
                 </Router>
             </ThemeProvider>
         </div>

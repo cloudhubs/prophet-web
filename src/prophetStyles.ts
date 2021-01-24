@@ -13,6 +13,9 @@ const prophetStyles = makeStyles({
         flexDirection: 'column',
         minHeight: '100vh',
     },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
     main: {
         marginTop: theme.spacing(8),
         marginBottom: theme.spacing(2),

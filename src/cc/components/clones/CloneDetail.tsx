@@ -62,10 +62,13 @@ const CloneDetail = ({clone}) => {
                     </TableBody>
                 </Table>
             </TableContainer>
-
+            {clone.msControllerMethod && clone.msControllerMethod.code &&
             <div>
                 <CodeSnippet code={clone.msControllerMethod.code} language={'java'} showLineNumbers={false} />
             </div>
+
+            }
+
 
             {/*<Typography variant="h6" gutterBottom>*/}
             {/*    Properties*/}
