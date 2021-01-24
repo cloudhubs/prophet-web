@@ -4,6 +4,8 @@ import AppHeader from "../components/main/AppHeader";
 import InconsistencyList from "./components/inconsistencies/InconsistencyList";
 import CodeCloneList from "./components/clones/CodeCloneList";
 
+import trainTicketCodeClones from "./CodeCloneData";
+
 const CCApp = () => {
     const classes = prophetStyles();
     const data = {
@@ -15461,16 +15463,20 @@ const CCApp = () => {
         }
     ]
 
-    // const getData = () => {
-    //     fetch('./entityClusterList.json', {
-    //         headers : {
-    //             'Content-Type': 'application/json',
-    //             'Accept': 'application/json'
-    //         }
-    //     }).then(function (response){
-    //         console.log(response)
-    //     })
-    // }
+    const tms2020 = [{"a":{"msController":{"msId":{"path":"/cms/src/main/java/edu/baylor/ecs/cms/controller/ConfigurationController.java","directoryName":""},"classId":"edu.baylor.ecs.cms.controller.ConfigurationController","packageName":"edu.baylor.ecs.cms.controller","className":"ConfigurationController","role":"CONTROLLER","code":""},"msControllerMethod":{"msId":{"path":"/cms/src/main/java/edu/baylor/ecs/cms/controller/ConfigurationController.java","directoryName":""},"code":"@CrossOrigin\n    @DeleteMapping(\"/{configurationId}\")\n    public ResponseEntity<?> deleteConfiguration(@PathVariable Long configurationId) {\n        return qmsService.deleteConfiguration(configurationId);\n    }","returnType":"ResponseEntity<?>","methodName":"deleteConfiguration","className":"ConfigurationController","packageName":"edu.baylor.ecs.cms.controller","methodId":"edu.baylor.ecs.cms.controller.ConfigurationController.deleteConfiguration","classId":"edu.baylor.ecs.cms.controller.ConfigurationController","line":40,"msArgumentList":[{"returnType":"Long"}],"msAnnotations":[{"isHttpAnnotation":false,"annotationName":"CrossOrigin"},{"isHttpAnnotation":false,"annotationName":"DeleteMapping"}]},"msServiceMethodCall":{"msId":{"path":"/cms/src/main/java/edu/baylor/ecs/cms/controller/ConfigurationController.java","directoryName":""},"code":"qmsService.deleteConfiguration(configurationId)","parentPackageName":"edu.baylor.ecs.cms.controller","parentClassName":"ConfigurationController","parentMethodName":"deleteConfiguration","parentClassId":"edu.baylor.ecs.cms.controller.ConfigurationController","lineNumber":43,"calledMethodName":"deleteConfiguration","calledServiceId":"qmsService","statementDeclaration":"qmsService.deleteConfiguration(configurationId)"},"msControllerServiceField":{"msId":{"path":"/cms/src/main/java/edu/baylor/ecs/cms/controller/ConfigurationController.java","directoryName":""},"code":"@Autowired\n    private QmsService qmsService;","fieldClass":"QmsService","fieldVariable":"qmsService","parentMethod":{"parentClassName":"ConfigurationController","parentPackageName":"edu.baylor.ecs.cms.controller"},"line":13}},"b":{"msController":{"msId":{"path":"/qms/src/main/java/baylor/csi/questionManagement/controller/ConfigurationController.java","directoryName":""},"classId":"baylor.csi.questionManagement.controller.ConfigurationController","packageName":"baylor.csi.questionManagement.controller","className":"ConfigurationController","role":"CONTROLLER","code":""},"msControllerMethod":{"msId":{"path":"/qms/src/main/java/baylor/csi/questionManagement/controller/ConfigurationController.java","directoryName":""},"code":"@CrossOrigin\n    @DeleteMapping(\"/{configurationId}\")\n    public ResponseEntity<?> deleteConfiguration(@PathVariable Long configurationId) {\n        return configurationRepository.findById(configurationId)\n                .map(configuration -> {\n                    configurationRepository.delete(configuration);\n                    return ResponseEntity.ok().build();\n                }).orElseThrow(() -> new ResourceNotFoundException(\"Configuration not found with id \" + configurationId));\n    }","returnType":"ResponseEntity<?>","methodName":"deleteConfiguration","className":"ConfigurationController","packageName":"baylor.csi.questionManagement.controller","methodId":"baylor.csi.questionManagement.controller.ConfigurationController.deleteConfiguration","classId":"baylor.csi.questionManagement.controller.ConfigurationController","line":45,"msArgumentList":[{"returnType":"Long"}],"msAnnotations":[{"isHttpAnnotation":false,"annotationName":"CrossOrigin"},{"isHttpAnnotation":false,"annotationName":"DeleteMapping"}]},"msServiceMethodCall":{"msId":{"path":"/qms/src/main/java/baylor/csi/questionManagement/controller/ConfigurationController.java","directoryName":""},"code":"configurationRepository.delete(configuration)","parentPackageName":"baylor.csi.questionManagement.controller","parentClassName":"ConfigurationController","parentMethodName":"deleteConfiguration","parentClassId":"baylor.csi.questionManagement.controller.ConfigurationController","lineNumber":50,"calledMethodName":"delete","calledServiceId":"configurationRepository","statementDeclaration":"configurationRepository.delete(configuration)"},"msControllerServiceField":{"msId":{"path":"/qms/src/main/java/baylor/csi/questionManagement/controller/ConfigurationController.java","directoryName":""},"code":"@Autowired\n    private ConfigurationRepository configurationRepository;","fieldClass":"ConfigurationRepository","fieldVariable":"configurationRepository","parentMethod":{"parentClassName":"ConfigurationController","parentPackageName":"baylor.csi.questionManagement.controller"},"line":22}},"similarityController":1,"similarityService":0,"similarityRepository":0,"similarityRestCalls":0,"globalSimilarity":0.8,"typeA":false,"typeB":true}]
+
+
+
+    const getData = () => {
+        // fetch('./entityClusterList.json', {
+        //     headers : {
+        //         'Content-Type': 'application/json',
+        //         'Accept': 'application/json'
+        //     }
+        // }).then(function (response){
+        //     console.log(response)
+        // })
+    }
 
     useEffect(()=> {
         // getData();
@@ -15481,7 +15487,9 @@ const CCApp = () => {
             <AppHeader/>
             <div className={classes.content}>
                 {/*<AllSummary metadata={data.metadata}/>*/}
-                <CodeCloneList cloneList={data.codeClones} />
+                {/*<CodeCloneList cloneList={data.codeClones} />*/}
+                <CodeCloneList cloneList={tms2020} />
+                {/*<CodeCloneList cloneList={trainTicketCodeClones} />*/}
                 {/*<InconsistencyList inconsistencyList={inconsistencies} />*/}
             </div>
         </div>

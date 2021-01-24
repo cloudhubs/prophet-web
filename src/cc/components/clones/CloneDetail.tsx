@@ -10,13 +10,27 @@ import TableContainer from "@material-ui/core/TableContainer";
 import CloneRow from "./CloneRow";
 import CloneLink from "./CloneLink";
 import CloneDetailTable from "./CloneDetailTable";
+import {createStyles, makeStyles, Theme} from "@material-ui/core/styles";
+import CodeSnippet from "../../utils/CodeSnippet";
+
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        paper: {
+            margin: theme.spacing( 5, 0),
+        },
+    }),
+);
+
+
 const CloneDetail = ({clone}) => {
+    const classes = useStyles();
     return (
         <div>
-            <Typography variant="h6" gutterBottom >
-                Links
-            </Typography>
-            <TableContainer component={Paper}>
+            {/*<Typography variant="h6" gutterBottom className={classes.paper}>*/}
+            {/*    Links*/}
+            {/*</Typography>*/}
+            <TableContainer component={Paper} className={classes.paper}>
                 <Table aria-label="simple table">
                     <TableBody>
                         <TableRow key={1}>
@@ -24,36 +38,42 @@ const CloneDetail = ({clone}) => {
                                 {"Controller"}
                             </TableCell>
                             <TableCell align="left">
-                                <CloneLink link={clone.msController.msId.path} heading={"p"}/>
+                                <CloneLink link={clone.msController.msId.path} heading={"p"}/> <span>({clone.msControllerMethod.line})</span>
                             </TableCell>
                         </TableRow>
-                        <TableRow key={2}>
-                            <TableCell component="th" scope="row">
-                                {"Service"}
-                            </TableCell>
-                            <TableCell align="left">
-                                <CloneLink link={clone.msService.msId.path} heading={"p"}/>
-                            </TableCell>
-                        </TableRow>
-                        <TableRow key={3}>
-                            <TableCell component="th" scope="row">
-                                {"Repository"}
-                            </TableCell>
-                            <TableCell align="left">
+                        {clone.msService &&
+                            <TableRow key={2}>
+                                <TableCell component="th" scope="row">
+                                    {"Service"}
+                                </TableCell>
+                                <TableCell align="left">
+                                    {clone.msService && <CloneLink link={clone.msService.msId.path} heading={"p"}/>}
+                                </TableCell>
+                            </TableRow>
+                        }
+                        {/*<TableRow key={3}>*/}
+                        {/*    <TableCell component="th" scope="row">*/}
+                        {/*        {"Repository"}*/}
+                        {/*    </TableCell>*/}
+                        {/*    <TableCell align="left">*/}
 
-                            </TableCell>
-                        </TableRow>
+                        {/*    </TableCell>*/}
+                        {/*</TableRow>*/}
                     </TableBody>
                 </Table>
             </TableContainer>
 
-            <Typography variant="h6" gutterBottom>
-                Properties
-            </Typography>
+            <div>
+                <CodeSnippet code={clone.msControllerMethod.code} language={'java'} showLineNumbers={false} />
+            </div>
+
+            {/*<Typography variant="h6" gutterBottom>*/}
+            {/*    Properties*/}
+            {/*</Typography>*/}
 
             {/*<CloneDetailTable msClass={clone.msController} msMethod={clone.msControllerMethod} tableName={"Controller"}/>*/}
 
-            <TableContainer component={Paper}>
+            <TableContainer component={Paper} className={classes.paper}>
                 <Table aria-label="properties table">
                     <TableBody>
                         <TableRow key={99}>
@@ -113,8 +133,8 @@ const CloneDetail = ({clone}) => {
                 </Table>
             </TableContainer>
 
-
-            <TableContainer component={Paper}>
+            {clone.msServiceMethod &&
+                <TableContainer component={Paper}>
                 <Table aria-label="properties table">
                     <TableBody>
                         <TableRow key={99}>
@@ -130,7 +150,7 @@ const CloneDetail = ({clone}) => {
                                 {"Return Type"}
                             </TableCell>
                             <TableCell align="left">
-                                {clone.msServiceMethod.returnType}
+                                {clone.msServiceMethod && clone.msServiceMethod.returnType}
                             </TableCell>
                         </TableRow>
                         <TableRow key={101}>
@@ -138,7 +158,7 @@ const CloneDetail = ({clone}) => {
                                 {"Class Name"}
                             </TableCell>
                             <TableCell align="left">
-                                {clone.msService.className}
+                                {clone.msServiceMethod && clone.msService.className}
                             </TableCell>
                         </TableRow>
 
@@ -147,10 +167,10 @@ const CloneDetail = ({clone}) => {
                                 {"Method Name"}
                             </TableCell>
                             <TableCell align="left">
-                                {clone.msServiceMethod.methodName}
+                                {clone.msServiceMethod && clone.msServiceMethod.methodName}
                             </TableCell>
                         </TableRow>
-                        {clone.msServiceMethod.msArgumentList.map((n) => (
+                        {clone.msServiceMethod && clone.msServiceMethod.msArgumentList.map((n) => (
                             <TableRow key={102}>
                                 <TableCell component="th" scope="row">
                                     {"Argument"}
@@ -161,7 +181,7 @@ const CloneDetail = ({clone}) => {
                             </TableRow>
                         ))}
 
-                        {clone.msServiceMethod.msAnnotations.map((n) => {
+                        {clone.msServiceMethod && clone.msServiceMethod.msAnnotations.map((n) => {
                             let isKey = n.key ? true : false;
                             return (
                                 <TableRow key={102}>
@@ -188,7 +208,7 @@ const CloneDetail = ({clone}) => {
                     </TableBody>
                 </Table>
             </TableContainer>
-
+            }
         </div>
     );
 }

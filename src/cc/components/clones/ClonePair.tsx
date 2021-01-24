@@ -31,7 +31,10 @@ const useStyles = makeStyles((theme: Theme) =>
 const ClonePair = (props: Props) => {
     const classes = useStyles();
     const [showResults, setShowResults] = React.useState(true)
-    const onClick = () => setShowResults(false)
+    const onClick = (e) => {
+        e.preventDefault();
+        setShowResults(false);
+    }
     return (
         <div>
             { showResults ? <Card>
@@ -62,7 +65,7 @@ const ClonePair = (props: Props) => {
                                     </Grid>
                                     <Grid item xs={8}>
                                         <Grid container justify="flex-end">
-                                            <Button onClick={onClick}>Solve</Button>
+                                            <Button onClick={e => onClick(e)}>Solve</Button>
                                         </Grid>
                                     </Grid>
                                     <Grid item xs={6}>

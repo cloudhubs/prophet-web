@@ -1,5 +1,6 @@
 import React from "react";
 import ClonePair from "./ClonePair";
+import PrettyPrintJson from "../../utils/PrettyPrintJson";
 
 type Props = {
     cloneList: any;
