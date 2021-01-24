@@ -1,12 +1,12 @@
 import React from "react";
 import {Link, Typography} from "@material-ui/core";
-const CloneLink = ({link}) => {
+const CloneLink = ({link, heading}) => {
     const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
     return (
         <div>
             <Link href="#" onClick={preventDefault}>
 
-                <Typography variant="h5" gutterBottom>
+                <Typography variant={heading} gutterBottom>
                     {link.split('/')[1]} - {link.split('/')[link.split('/').length -1]}
                 </Typography>
             </Link>

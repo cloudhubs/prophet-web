@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import prophetStyles from "../prophetStyles";
 import AppHeader from "../components/main/AppHeader";
 import InconsistencyList from "./components/inconsistencies/InconsistencyList";
+import CodeCloneList from "./components/clones/CodeCloneList";
 
 const CCApp = () => {
     const classes = prophetStyles();
@@ -15480,8 +15481,8 @@ const CCApp = () => {
             <AppHeader/>
             <div className={classes.content}>
                 {/*<AllSummary metadata={data.metadata}/>*/}
-                {/*<CodeCloneList cloneList={data.codeClones} />*/}
-                <InconsistencyList inconsistencyList={inconsistencies} />
+                <CodeCloneList cloneList={data.codeClones} />
+                {/*<InconsistencyList inconsistencyList={inconsistencies} />*/}
             </div>
         </div>
     )

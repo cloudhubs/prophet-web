@@ -16,22 +16,14 @@ const Clone = (props: Props) => {
         "    PreserveService-->PreserveRepository;";
     return (
         <div>
-            <Typography variant="h6" gutterBottom>
-                Link
-            </Typography>
-            <CloneLink link={props.clone.msController.msId.path} />
-            <Typography variant="h6" gutterBottom >
-                Diagram
-            </Typography>
-            <div style={{overflow: 'auto'}}>
-                <Mermaid chart={diagram} index={props.index}/>
-            </div>
-            <Typography variant="h6" gutterBottom>
-                Key Properties
-            </Typography>
+            <CloneLink link={props.clone.msController.msId.path} heading={"h5"}/>
 
-            {<PrettyPrintJson data={props.clone} />}
+            {/*<div style={{overflow: 'auto'}}>*/}
+            {/*    <Mermaid chart={diagram} index={props.index}/>*/}
+            {/*</div>*/}
+
             <CloneDetail clone={props.clone} />
+            {<PrettyPrintJson data={props.clone} />}
 
 
 

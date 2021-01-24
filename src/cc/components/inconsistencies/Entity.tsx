@@ -16,7 +16,7 @@ const Entity = ({entity}) => {
             {entity.hasMissingFiledAnnotations &&
                 <Grid item xs={6}>
                     <Paper className={classes.entity_item}>
-                        <CloneLink link={entity.path} />
+                        <CloneLink link={entity.path} heading={"h5"}/>
                         <FieldTable missingFields={entity.missingFields} />
                         <AnnotationFieldTable entity={entity} />
                         <CodeAccordion code={entity.code} />
@@ -28,7 +28,7 @@ const Entity = ({entity}) => {
             {!entity.hasMissingFiledAnnotations && entity.document == "Document" &&
                 <Grid item xs={6}>
                     <Paper className={classes.entity_item}>
-                        <CloneLink link={entity.path} />
+                        <CloneLink link={entity.path} heading={"h5"}/>
                         <CodeAccordion code={entity.code} />
                     </Paper>
                 </Grid>
