@@ -1,6 +1,7 @@
 import ActionsRegister from "../state/ActionsRegister";
 import * as React from "react";
 import FetchMetadata from "./FetchMetadata";
+import { config } from "../config";
 
 const DoAnalyze = {
     /**
@@ -22,8 +23,7 @@ const DoAnalyze = {
         }
     },
     async getProphetData(path: string) {
-        return await fetch( 'http://127.0.0.1:8081/', {
-        // return await fetch( 'https://cloudhubs.ecs.baylor.edu/prophet/utils', {
+        return await fetch(config.apiUrl , {
             method: 'POST',
             body: JSON.stringify({
                 repositories: [
