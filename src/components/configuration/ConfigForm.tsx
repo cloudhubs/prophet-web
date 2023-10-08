@@ -35,7 +35,7 @@ const ConfigForm = (conf: ConfigProps) => {
                 <TextField
                     id="github-url"
                     error={gitError}
-                    label="Repository URL (GitHub /organization/repository)"
+                    label="Repository URL (GitHub /organization/repository) or (GitHub /organization/repository#branchOrTag)"
                     type="text"
                     style={{ margin: 8 }}
                     placeholder="GitHub URL here"
